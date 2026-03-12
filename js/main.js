@@ -1,42 +1,52 @@
-/* ===== MAIN JS ===== */
 document.addEventListener('DOMContentLoaded', () => {
 
   // ===== MOBILE MENU =====
   const burger = document.querySelector('.nav__burger');
   const menu = document.querySelector('.nav__menu');
   const overlay = document.createElement('div');
-  overlay.className = 'menu-overlay';
-  overlay.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);z-index:1000;display:none;';
+  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(28,35,49,0.5);z-index:1000;display:none;';
   document.body.appendChild(overlay);
 
   if (burger && menu) {
-    burger.addEventListener('click', () => {
+    const toggle = () => {
+      const open = menu.classList.toggle('active');
       burger.classList.toggle('active');
-      menu.classList.toggle('active');
-      overlay.style.display = menu.classList.contains('active') ? 'block' : 'none';
-      document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
-    });
-
-    overlay.addEventListener('click', () => {
-      burger.classList.remove('active');
-      menu.classList.remove('active');
-      overlay.style.display = 'none';
-      document.body.style.overflow = '';
-    });
+      overlay.style.display = open ? 'block' : 'none';
+      document.body.style.overflow = open ? 'hidden' : '';
+    };
+    burger.addEventListener('click', toggle);
+    overlay.addEventListener('click', toggle);
   }
 
   // Mobile dropdown toggle
   document.querySelectorAll('.nav__item').forEach(item => {
-    const link = item.querySelector('.nav__link');
-    const dropdown = item.querySelector('.nav__dropdown');
-    if (link && dropdown && window.innerWidth <= 768) {
-      link.addEventListener('click', (e) => {
-        if (dropdown) {
-          e.preventDefault();
-          item.classList.toggle('active');
-        }
-      });
+    item.querySelector('.nav__link')?.addEventListener('click', (e) => {
+      if (window.innerWidth <= 768 && item.querySelector('.nav__mega, .nav__dropdown')) {
+        e.preventDefault();
+        item.classList.toggle('active');
+      }
+    });
+  });
+
+  // ===== TARIFF TABS (mobile) =====
+  document.querySelectorAll('.tariffs__tabs').forEach(tabsContainer => {
+    const tabs = tabsContainer.querySelectorAll('.tariffs__tab');
+    const grid = tabsContainer.nextElementSibling;
+    if (!grid) return;
+    const cards = grid.querySelectorAll('.tariff-card');
+
+    function activateTab(index) {
+      tabs.forEach((t, i) => t.classList.toggle('tariffs__tab--active', i === index));
+      cards.forEach((c, i) => c.classList.toggle('tariff-card--mobile-active', i === index));
     }
+
+    tabs.forEach((tab, i) => {
+      tab.addEventListener('click', () => activateTab(i));
+    });
+
+    // Activate popular tab by default
+    const popularIndex = [...tabs].findIndex(t => t.classList.contains('tariffs__tab--popular'));
+    activateTab(popularIndex >= 0 ? popularIndex : 1);
   });
 
   // ===== QUIZ =====
@@ -45,298 +55,160 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentStep = 0;
   const quizData = {};
 
-  window.quizNext = function(step) {
-    const currentStepEl = quizSteps[currentStep];
-    const selected = currentStepEl.querySelector('.quiz__option.selected');
-
-    if (!selected && currentStep < quizSteps.length - 1) {
-      const options = currentStepEl.querySelectorAll('.quiz__option');
-      if (options.length > 0) {
-        // Highlight that selection is needed
-        options.forEach(o => {
-          o.style.borderColor = '#ff4444';
-          setTimeout(() => { o.style.borderColor = ''; }, 1000);
-        });
-        return;
-      }
+  window.quizNext = function() {
+    const step = quizSteps[currentStep];
+    const selected = step?.querySelector('.quiz__option.selected');
+    if (!selected && step?.querySelectorAll('.quiz__option').length) {
+      step.querySelectorAll('.quiz__option').forEach(o => {
+        o.style.borderColor = 'var(--red)';
+        setTimeout(() => o.style.borderColor = '', 800);
+      });
+      return;
     }
-
-    if (selected) {
-      quizData[`step${currentStep + 1}`] = selected.dataset.value || selected.textContent.trim();
-    }
-
-    if (step !== undefined) {
-      currentStep = step;
-    } else {
-      currentStep++;
-    }
-
-    if (currentStep >= quizSteps.length) currentStep = quizSteps.length - 1;
-
-    quizSteps.forEach(s => s.classList.remove('active'));
-    if (quizSteps[currentStep]) {
-      quizSteps[currentStep].classList.add('active');
-    }
-
-    if (progressBar) {
-      const progress = ((currentStep + 1) / quizSteps.length) * 100;
-      progressBar.style.width = progress + '%';
-    }
+    if (selected) quizData[`step${currentStep + 1}`] = selected.dataset.value || selected.textContent.trim();
+    currentStep = Math.min(currentStep + 1, quizSteps.length - 1);
+    showStep();
   };
 
   window.quizPrev = function() {
-    if (currentStep > 0) {
-      currentStep--;
-      quizSteps.forEach(s => s.classList.remove('active'));
-      quizSteps[currentStep].classList.add('active');
-
-      if (progressBar) {
-        const progress = ((currentStep + 1) / quizSteps.length) * 100;
-        progressBar.style.width = progress + '%';
-      }
-    }
+    currentStep = Math.max(currentStep - 1, 0);
+    showStep();
   };
 
-  // Quiz option selection
-  document.querySelectorAll('.quiz__option').forEach(option => {
-    option.addEventListener('click', () => {
-      const parent = option.closest('.quiz__step');
-      parent.querySelectorAll('.quiz__option').forEach(o => o.classList.remove('selected'));
-      option.classList.add('selected');
+  function showStep() {
+    quizSteps.forEach(s => s.classList.remove('active'));
+    quizSteps[currentStep]?.classList.add('active');
+    if (progressBar) progressBar.style.width = ((currentStep + 1) / quizSteps.length * 100) + '%';
+  }
+
+  document.querySelectorAll('.quiz__option').forEach(opt => {
+    opt.addEventListener('click', () => {
+      opt.closest('.quiz__step').querySelectorAll('.quiz__option').forEach(o => o.classList.remove('selected'));
+      opt.classList.add('selected');
     });
   });
 
-  // Quiz form submission
-  const quizForm = document.querySelector('.quiz__final-form');
-  if (quizForm) {
-    quizForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = quizForm.querySelector('input[name="name"]');
-      const phone = quizForm.querySelector('input[name="phone"]');
+  // Quiz form submit
+  document.querySelector('.quiz__final-form')?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const f = e.target;
+    quizData.name = f.querySelector('[name="name"]')?.value;
+    quizData.phone = f.querySelector('[name="phone"]')?.value;
+    if (!quizData.phone) return;
+    showSuccess(f.closest('.quiz__step'));
+  });
 
-      if (name && phone && phone.value.trim()) {
-        quizData.name = name.value;
-        quizData.phone = phone.value;
-        console.log('Quiz data:', quizData);
-
-        // Show success
-        const wrapper = quizForm.closest('.quiz__step');
-        if (wrapper) {
-          wrapper.innerHTML = `
-            <div style="text-align:center; padding: 40px 0;">
-              <div style="font-size:3rem; margin-bottom:16px;">&#10003;</div>
-              <h3 style="font-size:1.4rem; margin-bottom:8px;">Спасибо за заявку!</h3>
-              <p style="color:#666;">Мы перезвоним вам в течение 15 минут и предоставим точный расчёт.</p>
-            </div>
-          `;
-        }
-      }
-    });
-  }
-
-  // ===== FAQ ACCORDION =====
-  document.querySelectorAll('.faq-item__question').forEach(question => {
-    question.addEventListener('click', () => {
-      const item = question.parentElement;
+  // ===== FAQ =====
+  document.querySelectorAll('.faq-item__question').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
       const answer = item.querySelector('.faq-item__answer');
-      const isActive = item.classList.contains('active');
-
-      // Close all
+      const wasActive = item.classList.contains('active');
       document.querySelectorAll('.faq-item').forEach(i => {
         i.classList.remove('active');
         i.querySelector('.faq-item__answer').style.maxHeight = '0';
       });
-
-      // Open clicked if not already open
-      if (!isActive) {
+      if (!wasActive) {
         item.classList.add('active');
         answer.style.maxHeight = answer.scrollHeight + 'px';
       }
     });
   });
 
-  // ===== MODAL =====
-  window.openModal = function(modalId) {
-    const modal = document.getElementById(modalId);
-    if (modal) {
-      modal.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
+  // ===== MODALS =====
+  window.openModal = (id) => {
+    document.getElementById(id)?.classList.add('active');
+    document.body.style.overflow = 'hidden';
   };
-
-  window.closeModal = function(modalId) {
-    const modal = document.getElementById(modalId);
-    if (modal) {
-      modal.classList.remove('active');
-      document.body.style.overflow = '';
-    }
+  window.closeModal = (id) => {
+    document.getElementById(id)?.classList.remove('active');
+    document.body.style.overflow = '';
   };
-
-  // Close modal on overlay click
-  document.querySelectorAll('.modal-overlay').forEach(overlay => {
-    overlay.addEventListener('click', (e) => {
-      if (e.target === overlay) {
-        overlay.classList.remove('active');
-        document.body.style.overflow = '';
-      }
+  document.querySelectorAll('.modal-overlay').forEach(o => {
+    o.addEventListener('click', (e) => {
+      if (e.target === o) { o.classList.remove('active'); document.body.style.overflow = ''; }
     });
   });
 
-  // ===== COUNTDOWN TIMER =====
-  function startTimer() {
-    const timerEl = document.querySelector('.promo__timer');
-    if (!timerEl) return;
-
-    // Set end date to 14 days from now
-    const endDate = new Date();
-    endDate.setDate(endDate.getDate() + 14);
-
-    function update() {
-      const now = new Date();
-      const diff = endDate - now;
-
-      if (diff <= 0) return;
-
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-      const daysEl = timerEl.querySelector('[data-days]');
-      const hoursEl = timerEl.querySelector('[data-hours]');
-      const minutesEl = timerEl.querySelector('[data-minutes]');
-      const secondsEl = timerEl.querySelector('[data-seconds]');
-
-      if (daysEl) daysEl.textContent = String(days).padStart(2, '0');
-      if (hoursEl) hoursEl.textContent = String(hours).padStart(2, '0');
-      if (minutesEl) minutesEl.textContent = String(minutes).padStart(2, '0');
-      if (secondsEl) secondsEl.textContent = String(seconds).padStart(2, '0');
-    }
-
+  // ===== TIMER =====
+  const timerEl = document.querySelector('.promo__timer');
+  if (timerEl) {
+    const end = new Date();
+    end.setDate(end.getDate() + 14);
+    const update = () => {
+      const d = end - new Date();
+      if (d <= 0) return;
+      const set = (sel, val) => { const el = timerEl.querySelector(sel); if (el) el.textContent = String(val).padStart(2, '0'); };
+      set('[data-days]', Math.floor(d / 864e5));
+      set('[data-hours]', Math.floor(d % 864e5 / 36e5));
+      set('[data-minutes]', Math.floor(d % 36e5 / 6e4));
+      set('[data-seconds]', Math.floor(d % 6e4 / 1e3));
+    };
     update();
     setInterval(update, 1000);
   }
-  startTimer();
 
   // ===== FORM SUBMISSIONS =====
   document.querySelectorAll('form[data-form]').forEach(form => {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-
-      const formData = new FormData(form);
-      const data = Object.fromEntries(formData);
-      console.log('Form submitted:', data);
-
-      // Show success message
-      const parent = form.parentElement;
-      const originalHTML = parent.innerHTML;
-      parent.innerHTML = `
-        <div style="text-align:center; padding: 20px;">
-          <div style="font-size:2rem; color:#28a745; margin-bottom:12px;">&#10003;</div>
-          <h3 style="font-size:1.2rem; margin-bottom:8px;">Заявка отправлена!</h3>
-          <p style="color:#666; font-size:0.9rem;">Мы свяжемся с вами в ближайшее время.</p>
-        </div>
-      `;
-
-      // Reset after 5 seconds
-      setTimeout(() => {
-        parent.innerHTML = originalHTML;
-      }, 5000);
+      showSuccess(form.parentElement);
     });
   });
+
+  function showSuccess(container) {
+    if (!container) return;
+    const original = container.innerHTML;
+    container.innerHTML = `
+      <div style="text-align:center;padding:24px 0;">
+        <div style="width:48px;height:48px;border-radius:50%;background:#E8F8F0;color:#27AE60;font-size:1.4rem;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">&#10003;</div>
+        <h3 style="font-size:1.15rem;margin-bottom:6px;color:#1C2331;">Заявка отправлена!</h3>
+        <p style="color:#4A5568;font-size:0.88rem;">Перезвоним в течение 15 минут</p>
+      </div>`;
+    setTimeout(() => { container.innerHTML = original; }, 5000);
+  }
 
   // ===== PHONE MASK =====
   document.querySelectorAll('input[type="tel"]').forEach(input => {
     input.addEventListener('input', (e) => {
-      let value = e.target.value.replace(/\D/g, '');
-      if (value.length > 0) {
-        if (value[0] === '3') {
-          // Belarus format
-          if (value.length <= 3) {
-            value = '+' + value;
-          } else if (value.length <= 5) {
-            value = '+' + value.slice(0, 3) + ' (' + value.slice(3);
-          } else if (value.length <= 8) {
-            value = '+' + value.slice(0, 3) + ' (' + value.slice(3, 5) + ') ' + value.slice(5);
-          } else if (value.length <= 10) {
-            value = '+' + value.slice(0, 3) + ' (' + value.slice(3, 5) + ') ' + value.slice(5, 8) + '-' + value.slice(8);
-          } else {
-            value = '+' + value.slice(0, 3) + ' (' + value.slice(3, 5) + ') ' + value.slice(5, 8) + '-' + value.slice(8, 10) + '-' + value.slice(10, 12);
-          }
-        } else {
-          if (value.length > 12) value = value.slice(0, 12);
-          value = '+' + value;
-        }
-      }
-      e.target.value = value;
-    });
-  });
-
-  // ===== SMOOTH SCROLL =====
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', (e) => {
-      const href = anchor.getAttribute('href');
-      if (href === '#') return;
-      const target = document.querySelector(href);
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      let v = e.target.value.replace(/\D/g, '');
+      if (v.length > 12) v = v.slice(0, 12);
+      if (v.startsWith('375')) {
+        const parts = ['+' + v.slice(0, 3)];
+        if (v.length > 3) parts.push(' (' + v.slice(3, 5));
+        if (v.length > 5) parts.push(') ' + v.slice(5, 8));
+        if (v.length > 8) parts.push('-' + v.slice(8, 10));
+        if (v.length > 10) parts.push('-' + v.slice(10, 12));
+        e.target.value = parts.join('');
+      } else if (v) {
+        e.target.value = '+' + v;
       }
     });
   });
 
   // ===== SCROLL ANIMATIONS =====
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); obs.unobserve(e.target); } });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
-
-  document.querySelectorAll('.section, .catalog-card, .feature-card, .step-card, .review-card, .advantage-card').forEach(el => {
+  document.querySelectorAll('.benefit-card, .tariff-card, .step-card, .review-card, .portfolio-card, .feature-card').forEach(el => {
     el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(el);
+    el.style.transform = 'translateY(16px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    obs.observe(el);
   });
-
-  // Add visible class styles
   const style = document.createElement('style');
-  style.textContent = '.visible { opacity: 1 !important; transform: translateY(0) !important; }';
+  style.textContent = '.vis{opacity:1!important;transform:translateY(0)!important;}';
   document.head.appendChild(style);
 
-  // ===== EXIT INTENT POPUP =====
+  // ===== EXIT INTENT =====
   let exitShown = false;
   document.addEventListener('mouseout', (e) => {
     if (e.clientY < 5 && !exitShown) {
       exitShown = true;
-      const exitModal = document.getElementById('exit-modal');
-      if (exitModal) {
-        exitModal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-      }
+      document.getElementById('exit-modal')?.classList.add('active');
+      document.body.style.overflow = 'hidden';
     }
-  });
-
-  // ===== HEADER SCROLL EFFECT =====
-  const header = document.querySelector('.header');
-  let lastScroll = 0;
-
-  window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    if (currentScroll > 100) {
-      header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
-    } else {
-      header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.06)';
-    }
-    lastScroll = currentScroll;
   });
 
 });

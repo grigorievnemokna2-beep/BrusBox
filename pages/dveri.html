@@ -10,21 +10,108 @@
 </head>
 <body>
 
-  <div class="top-bar"><div class="container"><div class="top-bar__left"><span>&#128205; Минск</span><span>Пн-Пт 9:00-19:00, Сб 10:00-16:00</span></div><div class="top-bar__right"><a href="mailto:info@brusbox.by">info@brusbox.by</a></div></div></div>
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar__left">
+        <span>Минск и вся Беларусь</span>
+        <span>Пн-Пт 9:00-19:00, Сб 10:00-16:00</span>
+      </div>
+      <div class="top-bar__right">
+        <span class="top-bar__highlight">Рассрочка 0% до 12 мес.</span>
+        <a href="mailto:info@brusbox.by">info@brusbox.by</a>
+      </div>
+    </div>
+  </div>
 
-  <header class="header"><div class="container"><a href="../index.html" class="header__logo">BRUS<span>BOX</span></a><div class="header__contacts"><div class="header__messengers"><a href="#" title="Viber">Vi</a><a href="#" title="Telegram">Tg</a></div><a href="tel:+375291234567" class="header__phone">+375 (29) 123-45-67</a><a href="#" class="btn btn--primary btn--sm" onclick="openModal('modal-zamer'); return false;">Бесплатный замер</a></div></div></header>
+  <header class="header">
+    <div class="container">
+      <a href="../index.html" class="header__logo">BRUS<span>BOX</span></a>
+      <div class="header__contacts">
+        <div class="header__messengers">
+          <a href="#" title="Viber">Vi</a>
+          <a href="#" title="Telegram">Tg</a>
+        </div>
+        <a href="tel:+375291234567" class="header__phone">+375 (29) 123-45-67</a>
+        <a href="#" class="btn btn--primary btn--sm" onclick="openModal('modal-zamer'); return false;">Бесплатный замер</a>
+      </div>
+    </div>
+  </header>
 
-  <nav class="nav"><div class="container"><ul class="nav__menu">
-    <li class="nav__item"><a href="okna.html" class="nav__link">Окна</a></li>
-    <li class="nav__item"><a href="dveri.html" class="nav__link nav__link--active">Двери</a></li>
-    <li class="nav__item"><a href="balkony.html" class="nav__link">Балконы</a></li>
-    <li class="nav__item"><a href="profili.html" class="nav__link">Профили BrusBox</a></li>
-    <li class="nav__item"><a href="ceny.html" class="nav__link">Цены</a></li>
-    <li class="nav__item"><a href="akcii.html" class="nav__link">Акции</a></li>
-    <li class="nav__item"><a href="portfolio.html" class="nav__link">Наши работы</a></li>
-    <li class="nav__item"><a href="about.html" class="nav__link">О компании</a></li>
-    <li class="nav__item"><a href="kontakty.html" class="nav__link">Контакты</a></li>
-  </ul><button class="nav__burger" aria-label="Меню"><span></span><span></span><span></span></button></div></nav>
+  <nav class="nav">
+    <div class="container">
+      <ul class="nav__menu">
+        <li class="nav__item">
+          <a href="okna.html" class="nav__link">Окна <svg viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2"/></svg></a>
+          <div class="nav__mega">
+            <div>
+              <div class="nav__mega-title">По назначению</div>
+              <a href="okna-kvartira.html">Окна в квартиру <span class="nav__mega-badge nav__mega-badge--hot">хит</span></a>
+              <a href="okna-dom.html">Окна в частный дом</a>
+              <a href="okna-dacha.html">Окна на дачу</a>
+              <a href="okna-office.html">Окна в офис</a>
+            </div>
+            <div>
+              <div class="nav__mega-title">По виду</div>
+              <a href="okna-odnos.html">Одностворчатые</a>
+              <a href="okna-dvuhs.html">Двухстворчатые</a>
+              <a href="okna-trehs.html">Трёхстворчатые</a>
+              <a href="okna-panoram.html">Панорамные</a>
+              <a href="okna-arka.html">Арочные</a>
+            </div>
+            <div>
+              <div class="nav__mega-title">По задаче</div>
+              <a href="okna-energo.html">Энергосберегающие <span class="nav__mega-badge nav__mega-badge--new">экономия</span></a>
+              <a href="okna-shumo.html">Шумозащитные</a>
+              <a href="okna-cvetnye.html">Цветные / ламинация</a>
+              <a href="okna-teplye.html">Тёплые (для дома)</a>
+            </div>
+            <div>
+              <div class="nav__mega-title">По бюджету</div>
+              <a href="okna.html#econom">Эконом <span class="nav__mega-price">от 150 BYN</span></a>
+              <a href="okna.html#standard">Стандарт <span class="nav__mega-price">от 210 BYN</span></a>
+              <a href="okna.html#premium">Премиум <span class="nav__mega-price">от 280 BYN</span></a>
+              <a href="akcii.html">Акции и скидки <span class="nav__mega-badge nav__mega-badge--hot">-25%</span></a>
+            </div>
+            <div class="nav__mega-cta">
+              <a href="#" class="btn btn--primary btn--sm" onclick="openModal('modal-zamer'); return false;">Рассчитать стоимость</a>
+              <a href="#" class="btn btn--outline btn--sm" onclick="openModal('modal-zamer'); return false;">Бесплатный замер</a>
+            </div>
+          </div>
+        </li>
+        <li class="nav__item">
+          <a href="dveri.html" class="nav__link nav__link--active">Двери <svg viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2"/></svg></a>
+          <div class="nav__dropdown">
+            <a href="dveri.html#vhodnye">Входные двери</a>
+            <a href="dveri.html#balkonnye">Балконные двери</a>
+            <a href="dveri.html#mezhkomnatnye">Межкомнатные двери</a>
+          </div>
+        </li>
+        <li class="nav__item">
+          <a href="balkony.html" class="nav__link">Балконы <svg viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2"/></svg></a>
+          <div class="nav__dropdown">
+            <a href="balkony.html#teploe">Тёплое остекление</a>
+            <a href="balkony.html#holodnoe">Холодное остекление</a>
+            <a href="balkony.html#razdvizhnoe">Раздвижное GLIDE</a>
+          </div>
+        </li>
+        <li class="nav__item">
+          <a href="profili.html" class="nav__link">Профили <svg viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2"/></svg></a>
+          <div class="nav__dropdown">
+            <a href="profili.html#aero">AERO</a>
+            <a href="profili.html#60-4">60-4</a>
+            <a href="profili.html#70-6">70-6</a>
+            <a href="profili.html#superaero">SUPER AERO</a>
+          </div>
+        </li>
+        <li class="nav__item"><a href="ceny.html" class="nav__link">Цены</a></li>
+        <li class="nav__item"><a href="akcii.html" class="nav__link">Акции</a></li>
+        <li class="nav__item"><a href="portfolio.html" class="nav__link">Наши работы</a></li>
+        <li class="nav__item"><a href="kontakty.html" class="nav__link">Контакты</a></li>
+      </ul>
+      <button class="nav__burger" aria-label="Меню"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
 
   <section class="page-hero">
     <div class="container">
