@@ -3,378 +3,254 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Окна BrusBox в Беларуси — пластиковые окна от официального дилера. Гарантия 60 лет на профиль. Бесплатный замер. Рассрочка 0%.">
-  <title>Окна BrusBox в Беларуси | Пластиковые окна — Рассрочка 0%, Бесплатный замер</title>
+  <meta name="description" content="BrusBox — окна, балконы и двери ПВХ в Беларуси от официального дилера. Гарантия 60 лет. Рассрочка 0%. Бесплатный замер.">
+  <title>BrusBox — Окна, балконы и двери ПВХ в Беларуси | Рассрочка 0%</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body data-theme="cold">
 
-  <!-- TOP BAR -->
-  <div class="top-bar">
-    <div class="container">
-      <div class="top-bar__left">
-        <span>Минск и вся Беларусь</span>
-        <span>Пн-Пт 9:00-19:00, Сб 10:00-16:00</span>
-      </div>
-      <div class="top-bar__right">
-        <span class="top-bar__highlight">Рассрочка 0% до 12 мес.</span>
-        <a href="mailto:info@brusbox.by">info@brusbox.by</a>
-      </div>
-    </div>
+  <!-- THEME SWITCHER -->
+  <div class="theme-switcher" style="overflow-y:auto;max-height:90vh;top:5vh;transform:none;">
+    <button class="theme-switcher__btn active" data-set-theme="cold"><span class="theme-switcher__dot" style="background:#2E86AB;"></span>Холодный</button>
+    <button class="theme-switcher__btn" data-set-theme="warm"><span class="theme-switcher__dot" style="background:#3A7D6E;"></span>Тёплый</button>
+    <button class="theme-switcher__btn" data-set-theme="mono"><span class="theme-switcher__dot" style="background:#3B82F6;"></span>Монохром</button>
+    <button class="theme-switcher__btn" data-set-theme="red"><span class="theme-switcher__dot" style="background:#E53935;"></span>Красный</button>
+    <button class="theme-switcher__btn" data-set-theme="lime"><span class="theme-switcher__dot" style="background:#76FF03;"></span>Кислотный</button>
+    <button class="theme-switcher__btn" data-set-theme="neon-pink"><span class="theme-switcher__dot" style="background:#FF1493;"></span>Неон-розовый</button>
+    <button class="theme-switcher__btn" data-set-theme="violet"><span class="theme-switcher__dot" style="background:#7C4DFF;"></span>Фиолет</button>
+    <button class="theme-switcher__btn" data-set-theme="cyber"><span class="theme-switcher__dot" style="background:#FFD600;"></span>Кибер</button>
+    <button class="theme-switcher__btn" data-set-theme="toxic"><span class="theme-switcher__dot" style="background:#00E5FF;"></span>Токсичный</button>
+    <button class="theme-switcher__btn" data-set-theme="fire"><span class="theme-switcher__dot" style="background:#FF6D00;"></span>Огненный</button>
+    <button class="theme-switcher__btn" data-set-theme="dark"><span class="theme-switcher__dot" style="background:#38BDF8;border-color:#38BDF8;"></span>Дарк-мод</button>
+    <button class="theme-switcher__btn" data-set-theme="rainbow"><span class="theme-switcher__dot" style="background:#E040FB;"></span>Химозный</button>
+    <button class="theme-switcher__btn" data-set-theme="matrix"><span class="theme-switcher__dot" style="background:#00FF41;"></span>Матрица</button>
   </div>
 
   <!-- HEADER -->
   <header class="header">
     <div class="container">
-      <a href="index.html" class="header__logo">
-        BRUS<span>BOX</span>
-      </a>
-      <div class="header__contacts">
-        <div class="header__messengers">
-          <a href="#" title="Viber">Vi</a>
-          <a href="#" title="Telegram">Tg</a>
-        </div>
+      <a href="index.html" class="header__logo">BRUS<span>BOX</span></a>
+      <div class="header__right">
         <a href="tel:+375291234567" class="header__phone">+375 (29) 123-45-67</a>
         <a href="#" class="btn btn--primary btn--sm" onclick="openModal('modal-zamer'); return false;">Бесплатный замер</a>
       </div>
     </div>
   </header>
 
-  <!-- NAV with MEGA MENU -->
+  <!-- NAV -->
   <nav class="nav">
     <div class="container">
       <ul class="nav__menu">
-        <!-- Окна — Мега-меню 4 колонки -->
-        <li class="nav__item">
-          <a href="pages/okna.html" class="nav__link">Окна <svg viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2"/></svg></a>
-          <div class="nav__mega">
-            <div>
-              <div class="nav__mega-title">По назначению</div>
-              <a href="pages/okna-kvartira.html">Окна в квартиру <span class="nav__mega-badge nav__mega-badge--hot">хит</span></a>
-              <a href="pages/okna-dom.html">Окна в частный дом</a>
-              <a href="pages/okna-dacha.html">Окна на дачу</a>
-              <a href="pages/okna-office.html">Окна в офис</a>
-            </div>
-            <div>
-              <div class="nav__mega-title">По виду</div>
-              <a href="pages/okna-odnos.html">Одностворчатые</a>
-              <a href="pages/okna-dvuhs.html">Двухстворчатые</a>
-              <a href="pages/okna-trehs.html">Трёхстворчатые</a>
-              <a href="pages/okna-panoram.html">Панорамные</a>
-              <a href="pages/okna-arka.html">Арочные</a>
-            </div>
-            <div>
-              <div class="nav__mega-title">По задаче</div>
-              <a href="pages/okna-energo.html">Энергосберегающие <span class="nav__mega-badge nav__mega-badge--new">экономия</span></a>
-              <a href="pages/okna-shumo.html">Шумозащитные</a>
-              <a href="pages/okna-cvetnye.html">Цветные / ламинация</a>
-              <a href="pages/okna-teplye.html">Тёплые (для дома)</a>
-            </div>
-            <div>
-              <div class="nav__mega-title">По бюджету</div>
-              <a href="pages/okna.html#econom">Эконом <span class="nav__mega-price">от 150 BYN</span></a>
-              <a href="pages/okna.html#standard">Стандарт <span class="nav__mega-price">от 210 BYN</span></a>
-              <a href="pages/okna.html#premium">Премиум <span class="nav__mega-price">от 280 BYN</span></a>
-              <a href="pages/akcii.html">Акции и скидки <span class="nav__mega-badge nav__mega-badge--hot">-25%</span></a>
-            </div>
-            <div class="nav__mega-cta">
-              <a href="#quiz" class="btn btn--primary btn--sm">Рассчитать стоимость</a>
-              <a href="#" class="btn btn--outline btn--sm" onclick="openModal('modal-zamer'); return false;">Бесплатный замер</a>
-            </div>
-          </div>
-        </li>
-        <!-- Двери — dropdown -->
-        <li class="nav__item">
-          <a href="pages/dveri.html" class="nav__link">Двери <svg viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2"/></svg></a>
-          <div class="nav__dropdown">
-            <a href="pages/dveri.html#vhodnye">Входные двери</a>
-            <a href="pages/dveri.html#balkonnye">Балконные двери</a>
-            <a href="pages/dveri.html#mezhkomnatnye">Межкомнатные двери</a>
-            <a href="pages/dveri.html#razdvizhnye">Раздвижные двери</a>
-          </div>
-        </li>
-        <!-- Балконы — dropdown -->
-        <li class="nav__item">
-          <a href="pages/balkony.html" class="nav__link">Балконы <svg viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2"/></svg></a>
-          <div class="nav__dropdown">
-            <a href="pages/balkony.html#teploe">Тёплое остекление</a>
-            <a href="pages/balkony.html#holodnoe">Холодное остекление</a>
-            <a href="pages/balkony.html#razdvizhnoe">Раздвижное GLIDE</a>
-            <a href="pages/balkony.html#lodzhii">Остекление лоджий</a>
-          </div>
-        </li>
-        <!-- Профили — dropdown -->
-        <li class="nav__item">
-          <a href="pages/profili.html" class="nav__link">Профили <svg viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2"/></svg></a>
-          <div class="nav__dropdown">
-            <a href="pages/profili.html#aero">AERO (3 камеры)</a>
-            <a href="pages/profili.html#60-4">60-4 (4 камеры)</a>
-            <a href="pages/profili.html#70-6">70-6 (6 камер)</a>
-            <a href="pages/profili.html#superaero">SUPER AERO (5 камер)</a>
-            <a href="pages/profili.html#glide">GLIDE (раздвижная)</a>
-          </div>
-        </li>
-        <li class="nav__item">
-          <a href="pages/ceny.html" class="nav__link">Цены</a>
-        </li>
-        <li class="nav__item">
-          <a href="pages/akcii.html" class="nav__link">Акции</a>
-        </li>
-        <li class="nav__item">
-          <a href="pages/portfolio.html" class="nav__link">Наши работы</a>
-        </li>
-        <li class="nav__item">
-          <a href="pages/kontakty.html" class="nav__link">Контакты</a>
-        </li>
+        <li class="nav__item"><a href="#section-okna" class="nav__link nav__link--active">Окна</a></li>
+        <li class="nav__item"><a href="#section-balkony" class="nav__link">Балконы</a></li>
+        <li class="nav__item"><a href="#section-dveri" class="nav__link">Двери</a></li>
+        <li class="nav__item"><a href="pages/profili.html" class="nav__link">Профили</a></li>
+        <li class="nav__item"><a href="pages/ceny.html" class="nav__link">Цены</a></li>
+        <li class="nav__item"><a href="pages/akcii.html" class="nav__link">Акции</a></li>
+        <li class="nav__item"><a href="pages/portfolio.html" class="nav__link">Работы</a></li>
+        <li class="nav__item"><a href="pages/kontakty.html" class="nav__link">Контакты</a></li>
       </ul>
-      <button class="nav__burger" aria-label="Меню">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <button class="nav__burger" aria-label="Меню"><span></span><span></span><span></span></button>
     </div>
   </nav>
 
-  <!-- ============================== -->
-  <!-- БЛОК 1: HERO                   -->
-  <!-- ============================== -->
+  <!-- 1. HERO -->
   <section class="hero">
     <div class="container">
       <div class="hero__content">
-        <div class="hero__badge">Официальный дилер BrusBox в Беларуси</div>
-        <h1 class="hero__title">Пластиковые окна <span>BrusBox</span> &mdash; тепло и тишина в&nbsp;вашем доме</h1>
-        <p class="hero__text">Гарантия 60 лет на профиль. Бесплатный замер и установка по всей Беларуси.</p>
-        <div class="hero__installment">
+        <div class="hero__label">Официальный дилер BrusBox в Беларуси</div>
+        <h1 class="hero__title">Окна, балконы и двери<br>нового поколения</h1>
+        <p class="hero__text">Профиль класса А с гарантией 60 лет. Установка за 1 день. Бесплатный замер по всей Беларуси.</p>
+        <div class="hero__note">
           Рассрочка <strong>0% до 12 месяцев</strong> без переплат
         </div>
-        <div class="hero__buttons">
-          <a href="#quiz" class="btn btn--primary btn--lg">Рассчитать стоимость</a>
+        <div class="hero__actions">
+          <a href="#products" class="btn btn--primary btn--lg">Смотреть продукцию</a>
           <a href="#" class="btn btn--white btn--lg" onclick="openModal('modal-zamer'); return false;">Бесплатный замер</a>
         </div>
-        <div class="hero__stats">
-          <div class="hero__stat">
-            <div class="hero__stat-value">5 000+</div>
-            <div class="hero__stat-label">установленных окон</div>
+        <div class="hero__metrics">
+          <div>
+            <div class="hero__metric-value">5 000+</div>
+            <div class="hero__metric-label">выполненных заказов</div>
           </div>
-          <div class="hero__stat">
-            <div class="hero__stat-value">60 лет</div>
-            <div class="hero__stat-label">гарантия на профиль</div>
+          <div>
+            <div class="hero__metric-value">60 лет</div>
+            <div class="hero__metric-label">гарантия профиля</div>
           </div>
-          <div class="hero__stat">
-            <div class="hero__stat-value">0%</div>
-            <div class="hero__stat-label">рассрочка</div>
+          <div>
+            <div class="hero__metric-value">4.9</div>
+            <div class="hero__metric-label">средняя оценка</div>
           </div>
         </div>
       </div>
       <div class="hero__visual">
-        <div class="hero__window">
-          <div class="hero__window-sky"></div>
-          <div class="hero__window-handle"></div>
-        </div>
+        <img src="img/главный экран.png" alt="Пластиковое окно BrusBox" class="hero__photo">
       </div>
     </div>
   </section>
 
-  <!-- TRUST BAR -->
-  <section class="trust-bar">
+  <!-- TRUST -->
+  <section class="trust-strip">
     <div class="container">
-      <div class="trust-item">
-        <div class="trust-item__icon">&#128737;</div>
-        <div class="trust-item__text">
-          <div class="trust-item__value">60 лет</div>
-          Гарантия на профиль
-        </div>
+      <div class="trust-strip__item">
+        <div class="trust-strip__icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div class="trust-strip__text"><strong>60 лет</strong>Гарантия на профиль</div>
       </div>
-      <div class="trust-item">
-        <div class="trust-item__icon">&#9881;</div>
-        <div class="trust-item__text">
-          <div class="trust-item__value">7 систем</div>
-          Профильных систем
-        </div>
+      <div class="trust-strip__item">
+        <div class="trust-strip__icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <div class="trust-strip__text"><strong>1 день</strong>Установка за день</div>
       </div>
-      <div class="trust-item">
-        <div class="trust-item__icon">&#128176;</div>
-        <div class="trust-item__text">
-          <div class="trust-item__value">Рассрочка 0%</div>
-          До 12 месяцев
-        </div>
+      <div class="trust-strip__item">
+        <div class="trust-strip__icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></div>
+        <div class="trust-strip__text"><strong>Рассрочка 0%</strong>До 12 месяцев</div>
       </div>
-      <div class="trust-item">
-        <div class="trust-item__icon">&#128207;</div>
-        <div class="trust-item__text">
-          <div class="trust-item__value">Бесплатно</div>
-          Замер и консультация
-        </div>
-      </div>
-      <div class="trust-item">
-        <div class="trust-item__icon">&#11088;</div>
-        <div class="trust-item__text">
-          <div class="trust-item__value">4.9 / 5</div>
-          Средняя оценка
-        </div>
+      <div class="trust-strip__item">
+        <div class="trust-strip__icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8m8 4H8"/></svg></div>
+        <div class="trust-strip__text"><strong>Бесплатно</strong>Замер и консультация</div>
       </div>
     </div>
   </section>
 
-  <!-- ============================== -->
-  <!-- БЛОК 2: ЧТО ВЫ ПОЛУЧИТЕ       -->
-  <!-- ============================== -->
-  <section class="section">
+  <!-- 2. ПРОДУКЦИЯ — 3 карточки-навигатора -->
+  <section class="section" id="products">
     <div class="container">
-      <h2 class="section-title">Что вы получите с окнами BrusBox</h2>
-      <p class="section-subtitle">Каждое окно &mdash; это решение конкретной проблемы</p>
-      <div class="benefits-grid">
-        <div class="benefit-card">
-          <div class="benefit-card__icon">&#127777;</div>
-          <div>
-            <h3 class="benefit-card__title">Тепло зимой</h3>
-            <p class="benefit-card__text">6-камерный профиль 70-6 удерживает тепло при &minus;60&deg;C. Экономия на отоплении до 30%.</p>
+      <div class="section-label" style="text-align:center;">Продукция</div>
+      <h2 class="section-title">Выберите ваш продукт</h2>
+      <p class="section-desc">Три направления — одна гарантия качества. Выберите что вам нужно и посмотрите цены.</p>
+      <div class="products-nav">
+        <a href="#section-okna" class="product-nav-card">
+          <div class="product-nav-card__icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M12 3v18M3 12h18"/><circle cx="10" cy="16" r="0.5" fill="currentColor"/></svg>
           </div>
-        </div>
-        <div class="benefit-card">
-          <div class="benefit-card__icon">&#128264;</div>
-          <div>
-            <h3 class="benefit-card__title">Тишина в доме</h3>
-            <p class="benefit-card__text">Двухкамерный стеклопакет снижает уличный шум на 40 дБ. Дорога под окном &mdash; не помеха.</p>
+          <h3 class="product-nav-card__title">Пластиковые окна</h3>
+          <p class="product-nav-card__desc">Для квартир и частных домов. 3 тарифа на выбор.</p>
+          <div class="product-nav-card__price">от 240 BYN</div>
+          <span class="product-nav-card__link">Смотреть тарифы &#8595;</span>
+        </a>
+        <a href="#section-balkony" class="product-nav-card">
+          <div class="product-nav-card__icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="1"/><path d="M2 10h20"/><path d="M7 10v10M12 10v10M17 10v10"/></svg>
           </div>
-        </div>
-        <div class="benefit-card">
-          <div class="benefit-card__icon">&#128167;</div>
-          <div>
-            <h3 class="benefit-card__title">Сухие стёкла</h3>
-            <p class="benefit-card__text">Тёплая дистанционная рамка и энергосберегающее покрытие &mdash; никакого конденсата.</p>
+          <h3 class="product-nav-card__title">Остекление балконов</h3>
+          <p class="product-nav-card__desc">Тёплое и раздвижное остекление. Балкон под ключ.</p>
+          <div class="product-nav-card__price">от 180 BYN/м²</div>
+          <span class="product-nav-card__link">Смотреть тарифы &#8595;</span>
+        </a>
+        <a href="#section-dveri" class="product-nav-card">
+          <div class="product-nav-card__icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="2" width="16" height="20" rx="1"/><circle cx="15" cy="12" r="1" fill="currentColor"/><path d="M4 2h16v20H4z"/></svg>
           </div>
-        </div>
-        <div class="benefit-card">
-          <div class="benefit-card__icon">&#128274;</div>
-          <div>
-            <h3 class="benefit-card__title">Безопасность</h3>
-            <p class="benefit-card__text">Фурнитура Roto/Maco с защитой от взлома. Детский замок в комплекте.</p>
-          </div>
-        </div>
-        <div class="benefit-card">
-          <div class="benefit-card__icon">&#127912;</div>
-          <div>
-            <h3 class="benefit-card__title">Стильный вид</h3>
-            <p class="benefit-card__text">Белый, цветной или под дерево &mdash; более 40 вариантов ламинации для любого интерьера.</p>
-          </div>
-        </div>
-        <div class="benefit-card">
-          <div class="benefit-card__icon">&#128176;</div>
-          <div>
-            <h3 class="benefit-card__title">Без переплат</h3>
-            <p class="benefit-card__text">Рассрочка 0% до 12 месяцев. Фиксируем цену при замере &mdash; никаких доплат.</p>
-          </div>
-        </div>
+          <h3 class="product-nav-card__title">Двери ПВХ</h3>
+          <p class="product-nav-card__desc">Входные и балконные двери. Ламинация в цвет дома.</p>
+          <div class="product-nav-card__price">от 490 BYN</div>
+          <span class="product-nav-card__link">Смотреть тарифы &#8595;</span>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- ============================== -->
-  <!-- БЛОК 3: ТРИ ТАРИФА             -->
-  <!-- ============================== -->
-  <section class="tariffs" id="tariffs">
+  <!-- ============================================ -->
+  <!-- 3. СЕКЦИЯ ОКНА -->
+  <!-- ============================================ -->
+  <section class="product-section section--alt" id="section-okna">
     <div class="container">
-      <h2 class="section-title">Выберите ваш вариант окна</h2>
-      <p class="section-subtitle">Три готовых решения &mdash; от доступного до максимального комфорта</p>
+      <div class="section-label" style="text-align:center;">Окна</div>
+      <h2 class="section-title">Пластиковые окна BrusBox</h2>
+      <p class="section-desc">Для квартир, частных домов и дач. Профиль класса А, гарантия 60 лет.</p>
 
-      <!-- Табы для мобильных -->
-      <div class="tariffs__tabs">
-        <button class="tariffs__tab">Комфорт</button>
-        <button class="tariffs__tab tariffs__tab--popular">Оптимал</button>
-        <button class="tariffs__tab">Премиум</button>
+      <!-- Преимущества окон -->
+      <div class="product-features">
+        <div class="product-feature">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 0110 10c0 5.52-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2z"/><path d="M12 6v6l4 2"/></svg>
+          <div><strong>Перестанет дуть</strong><span>6-камерный профиль держит тепло при -60°C</span></div>
+        </div>
+        <div class="product-feature">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+          <div><strong>Станет тихо</strong><span>Снижение шума на 40 дБ</span></div>
+        </div>
+        <div class="product-feature">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+          <div><strong>Стёкла не потеют</strong><span>Тёплая рамка + i-стекло = нет конденсата</span></div>
+        </div>
+        <div class="product-feature">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          <div><strong>Экономия 30%</strong><span>На отоплении с энергосберегающим покрытием</span></div>
+        </div>
       </div>
 
+      <!-- Тарифы окон -->
       <div class="tariffs__grid">
-        <!-- Комфорт -->
         <div class="tariff-card">
-          <div class="tariff-card__segment tariff-card__segment--eco">Комфорт</div>
+          <div class="tariff-card__tag tariff-card__tag--eco">Комфорт</div>
           <h3 class="tariff-card__name">AERO</h3>
-          <p class="tariff-card__desc">Надёжное окно для типовой квартиры или дачи. Проверенное решение по доступной цене.</p>
-          <div class="tariff-card__visual">
-            <div class="hero__window" style="max-width:160px;border-width:4px;aspect-ratio:3/4;"></div>
+          <p class="tariff-card__desc">Надёжное базовое окно для квартиры или дачи.</p>
+          <div class="tariff-card__features">
+            <div class="tariff-card__feature">3-камерный профиль, 60 мм</div>
+            <div class="tariff-card__feature">Однокамерный стеклопакет</div>
+            <div class="tariff-card__feature">Фурнитура Roto (Германия)</div>
+            <div class="tariff-card__feature">Москитная сетка</div>
+            <div class="tariff-card__feature">Монтаж + демонтаж</div>
+            <div class="tariff-card__feature tariff-card__feature--na">Энергосберегающее покрытие</div>
           </div>
-          <ul class="tariff-card__features">
-            <li class="tariff-card__feature">3-камерный профиль, 60 мм</li>
-            <li class="tariff-card__feature">Однокамерный стеклопакет</li>
-            <li class="tariff-card__feature">Фурнитура Roto (Германия)</li>
-            <li class="tariff-card__feature">Москитная сетка</li>
-            <li class="tariff-card__feature">Монтаж по ГОСТу</li>
-            <li class="tariff-card__feature tariff-card__feature--na">Энергосберегающее покрытие</li>
-          </ul>
           <div class="tariff-card__pricing">
             <div class="tariff-card__old-price">от 320 BYN</div>
             <div class="tariff-card__price">от 240 BYN <small>за окно</small></div>
             <div class="tariff-card__installment">или <strong>20 BYN/мес</strong> в рассрочку</div>
           </div>
-          <div class="tariff-card__actions">
-            <a href="#tariff-form" class="btn btn--outline btn--full">Выбрать Комфорт</a>
-          </div>
-          <p class="tariff-card__note">Замер бесплатно. Гарантия 60 лет на профиль.</p>
+          <div class="tariff-card__cta"><a href="#form-okna" class="btn btn--outline btn--full">Выбрать</a></div>
+          <p class="tariff-card__note">Бесплатный замер. Гарантия 60 лет.</p>
         </div>
 
-        <!-- Оптимал (популярный) -->
         <div class="tariff-card tariff-card--popular">
-          <div class="tariff-card__segment tariff-card__segment--std">Оптимал</div>
+          <div class="tariff-card__tag tariff-card__tag--std">Оптимал</div>
           <h3 class="tariff-card__name">70-6</h3>
-          <p class="tariff-card__desc">Лучший баланс цены и характеристик. Выбор 70% наших клиентов.</p>
-          <div class="tariff-card__visual">
-            <div class="hero__window" style="max-width:160px;border-width:4px;aspect-ratio:3/4;"></div>
+          <p class="tariff-card__desc">Лучший баланс цены и качества. Выбор 70% клиентов.</p>
+          <div class="tariff-card__features">
+            <div class="tariff-card__feature">6-камерный профиль, 70 мм</div>
+            <div class="tariff-card__feature">Двухкамерный стеклопакет</div>
+            <div class="tariff-card__feature">Фурнитура Maco (Австрия)</div>
+            <div class="tariff-card__feature">Москитная сетка</div>
+            <div class="tariff-card__feature">Монтаж + демонтаж + уборка</div>
+            <div class="tariff-card__feature">Энергосберегающее i-стекло</div>
           </div>
-          <ul class="tariff-card__features">
-            <li class="tariff-card__feature">6-камерный профиль, 70 мм</li>
-            <li class="tariff-card__feature">Двухкамерный стеклопакет</li>
-            <li class="tariff-card__feature">Фурнитура Maco (Австрия)</li>
-            <li class="tariff-card__feature">Москитная сетка</li>
-            <li class="tariff-card__feature">Монтаж по ГОСТу</li>
-            <li class="tariff-card__feature">Энергосберегающее покрытие</li>
-          </ul>
           <div class="tariff-card__pricing">
             <div class="tariff-card__old-price">от 450 BYN</div>
             <div class="tariff-card__price">от 340 BYN <small>за окно</small></div>
             <div class="tariff-card__installment">или <strong>28 BYN/мес</strong> в рассрочку</div>
           </div>
-          <div class="tariff-card__actions">
-            <a href="#tariff-form" class="btn btn--primary btn--full">Выбрать Оптимал</a>
-          </div>
-          <p class="tariff-card__note">Замер бесплатно. Гарантия 60 лет на профиль.</p>
+          <div class="tariff-card__cta"><a href="#form-okna" class="btn btn--primary btn--full">Выбрать</a></div>
+          <p class="tariff-card__note">Бесплатный замер. Гарантия 60 лет.</p>
         </div>
 
-        <!-- Премиум -->
         <div class="tariff-card">
-          <div class="tariff-card__segment tariff-card__segment--pro">Премиум</div>
+          <div class="tariff-card__tag tariff-card__tag--pro">Премиум</div>
           <h3 class="tariff-card__name">SUPER AERO</h3>
-          <p class="tariff-card__desc">Максимальная энергоэффективность и комфорт. Для тех, кто выбирает лучшее.</p>
-          <div class="tariff-card__visual">
-            <div class="hero__window" style="max-width:160px;border-width:4px;aspect-ratio:3/4;"></div>
+          <p class="tariff-card__desc">Максимальная энергоэффективность и тишина.</p>
+          <div class="tariff-card__features">
+            <div class="tariff-card__feature">5-камерный профиль, 60 мм</div>
+            <div class="tariff-card__feature">Двухкамерный энерго-стеклопакет</div>
+            <div class="tariff-card__feature">Фурнитура Maco (Австрия)</div>
+            <div class="tariff-card__feature">Москитная сетка</div>
+            <div class="tariff-card__feature">Монтаж + откосы + уборка</div>
+            <div class="tariff-card__feature">Мультифункциональное i-стекло</div>
           </div>
-          <ul class="tariff-card__features">
-            <li class="tariff-card__feature">5-камерный профиль, 60 мм</li>
-            <li class="tariff-card__feature">Двухкамерный энерго-стеклопакет</li>
-            <li class="tariff-card__feature">Фурнитура Maco (Австрия)</li>
-            <li class="tariff-card__feature">Москитная сетка</li>
-            <li class="tariff-card__feature">Монтаж по ГОСТу + откосы</li>
-            <li class="tariff-card__feature">Энергосберегающее покрытие i-стекло</li>
-          </ul>
           <div class="tariff-card__pricing">
             <div class="tariff-card__old-price">от 560 BYN</div>
             <div class="tariff-card__price">от 420 BYN <small>за окно</small></div>
             <div class="tariff-card__installment">или <strong>35 BYN/мес</strong> в рассрочку</div>
           </div>
-          <div class="tariff-card__actions">
-            <a href="#tariff-form" class="btn btn--outline btn--full">Выбрать Премиум</a>
-          </div>
-          <p class="tariff-card__note">Замер бесплатно. Гарантия 60 лет на профиль.</p>
+          <div class="tariff-card__cta"><a href="#form-okna" class="btn btn--outline btn--full">Выбрать</a></div>
+          <p class="tariff-card__note">Бесплатный замер. Гарантия 60 лет.</p>
         </div>
       </div>
 
-      <!-- Открытая форма под тарифами -->
-      <div class="tariff-form" id="tariff-form">
-        <h3 class="tariff-form__title">Оставьте заявку &mdash; рассчитаем точную стоимость</h3>
-        <p class="tariff-form__text">Замерщик приедет бесплатно, рассчитает стоимость и зафиксирует цену. Рассрочка 0% до 12 мес.</p>
-        <form data-form="tariff">
+      <!-- Форма окна -->
+      <div class="tariff-form" id="form-okna">
+        <h3 class="tariff-form__title">Рассчитать стоимость окон</h3>
+        <p class="tariff-form__desc">Замерщик приедет бесплатно и зафиксирует цену. Рассрочка 0%.</p>
+        <form data-form="okna">
           <div class="tariff-form__row">
             <input type="text" name="name" class="tariff-form__input" placeholder="Ваше имя" required>
             <input type="tel" name="phone" class="tariff-form__input" placeholder="+375 (__) ___-__-__" required>
@@ -390,136 +266,277 @@
     </div>
   </section>
 
-  <!-- ============================== -->
-  <!-- БЛОК 4: КВИЗ                   -->
-  <!-- ============================== -->
-  <section class="quiz section--gray" id="quiz">
+  <!-- ============================================ -->
+  <!-- 4. СЕКЦИЯ БАЛКОНЫ -->
+  <!-- ============================================ -->
+  <section class="product-section" id="section-balkony">
     <div class="container">
-      <h2 class="section-title">Рассчитайте стоимость за 30 секунд</h2>
-      <p class="section-subtitle">Ответьте на 5 вопросов и получите точный расчёт со скидкой + рассрочка 0%</p>
-      <div class="quiz__wrapper">
-        <div class="quiz__progress">
-          <div class="quiz__progress-bar" style="width:20%"></div>
+      <div class="section-label" style="text-align:center;">Балконы</div>
+      <h2 class="section-title">Остекление балконов и лоджий</h2>
+      <p class="section-desc">Тёплое или раздвижное остекление. Превратите балкон в полноценную комнату или защитите от непогоды.</p>
+
+      <!-- Преимущества балконов -->
+      <div class="product-features">
+        <div class="product-feature">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0h4"/></svg>
+          <div><strong>+1 комната</strong><span>Тёплый балкон — полноценное жилое пространство</span></div>
+        </div>
+        <div class="product-feature">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <div><strong>Защита от всего</strong><span>Дождь, пыль, ветер, шум — остаются снаружи</span></div>
+        </div>
+        <div class="product-feature">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          <div><strong>Монтаж за 1 день</strong><span>Быстрая установка без долгого ремонта</span></div>
+        </div>
+        <div class="product-feature">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+          <div><strong>Рассрочка 0%</strong><span>До 12 месяцев без переплат</span></div>
+        </div>
+      </div>
+
+      <!-- Тарифы балконов -->
+      <div class="tariffs__grid">
+        <!-- Раздвижное -->
+        <div class="tariff-card">
+          <div class="tariff-card__tag tariff-card__tag--eco">Раздвижное</div>
+          <h3 class="tariff-card__name">Холодное</h3>
+          <p class="tariff-card__desc">Защита от дождя, пыли и ветра. Бюджетный вариант.</p>
+          <div class="tariff-card__features">
+            <div class="tariff-card__feature">Алюминиевый профиль</div>
+            <div class="tariff-card__feature">Раздвижная система — экономит место</div>
+            <div class="tariff-card__feature">Одинарное стекло 4 мм</div>
+            <div class="tariff-card__feature">Защита от дождя и пыли</div>
+            <div class="tariff-card__feature">Быстрый монтаж</div>
+            <div class="tariff-card__feature tariff-card__feature--na">Утепление</div>
+          </div>
+          <div class="tariff-card__pricing">
+            <div class="tariff-card__old-price">от 250 BYN/м²</div>
+            <div class="tariff-card__price">от 180 BYN/м²</div>
+            <div class="tariff-card__installment">или <strong>от 15 BYN/мес</strong> в рассрочку</div>
+          </div>
+          <div class="tariff-card__cta"><a href="#form-balkony" class="btn btn--outline btn--full">Рассчитать</a></div>
+          <p class="tariff-card__note">Бесплатный замер. Гарантия 10 лет.</p>
         </div>
 
-        <!-- Step 1 -->
+        <!-- Тёплое -->
+        <div class="tariff-card tariff-card--popular">
+          <div class="tariff-card__tag tariff-card__tag--std">Тёплое</div>
+          <h3 class="tariff-card__name">BrusBox 70</h3>
+          <p class="tariff-card__desc">Полноценная комната на балконе. Тепло и тихо круглый год.</p>
+          <div class="tariff-card__features">
+            <div class="tariff-card__feature">Профиль BrusBox 70 мм, 6 камер</div>
+            <div class="tariff-card__feature">Двухкамерный стеклопакет</div>
+            <div class="tariff-card__feature">Фурнитура Maco (Австрия)</div>
+            <div class="tariff-card__feature">Энергосберегающее i-стекло</div>
+            <div class="tariff-card__feature">Тепло зимой, тихо летом</div>
+            <div class="tariff-card__feature">Москитная сетка</div>
+          </div>
+          <div class="tariff-card__pricing">
+            <div class="tariff-card__old-price">от 420 BYN/м²</div>
+            <div class="tariff-card__price">от 320 BYN/м²</div>
+            <div class="tariff-card__installment">или <strong>от 27 BYN/мес</strong> в рассрочку</div>
+          </div>
+          <div class="tariff-card__cta"><a href="#form-balkony" class="btn btn--primary btn--full">Рассчитать</a></div>
+          <p class="tariff-card__note">Бесплатный замер. Гарантия 60 лет.</p>
+        </div>
+
+        <!-- Под ключ -->
+        <div class="tariff-card">
+          <div class="tariff-card__tag tariff-card__tag--pro">Под ключ</div>
+          <h3 class="tariff-card__name">Комплекс</h3>
+          <p class="tariff-card__desc">Остекление + утепление + отделка. Заезжайте и живите.</p>
+          <div class="tariff-card__features">
+            <div class="tariff-card__feature">Профиль BrusBox 70 мм, 6 камер</div>
+            <div class="tariff-card__feature">Двухкамерный энерго-стеклопакет</div>
+            <div class="tariff-card__feature">Утепление пеноплексом 50 мм</div>
+            <div class="tariff-card__feature">Отделка панелями ПВХ</div>
+            <div class="tariff-card__feature">Тёплый пол (опция)</div>
+            <div class="tariff-card__feature">Электрика + освещение</div>
+          </div>
+          <div class="tariff-card__pricing">
+            <div class="tariff-card__old-price">от 650 BYN/м²</div>
+            <div class="tariff-card__price">от 490 BYN/м²</div>
+            <div class="tariff-card__installment">или <strong>от 41 BYN/мес</strong> в рассрочку</div>
+          </div>
+          <div class="tariff-card__cta"><a href="#form-balkony" class="btn btn--outline btn--full">Рассчитать</a></div>
+          <p class="tariff-card__note">Бесплатный замер. Гарантия 60 лет.</p>
+        </div>
+      </div>
+
+      <!-- Форма балконы -->
+      <div class="tariff-form" id="form-balkony">
+        <h3 class="tariff-form__title">Рассчитать остекление балкона</h3>
+        <p class="tariff-form__desc">Замерщик приедет бесплатно, покажет образцы и рассчитает точную стоимость.</p>
+        <form data-form="balkony">
+          <div class="tariff-form__row">
+            <input type="text" name="name" class="tariff-form__input" placeholder="Ваше имя" required>
+            <input type="tel" name="phone" class="tariff-form__input" placeholder="+375 (__) ___-__-__" required>
+            <button type="submit" class="btn btn--primary btn--lg">Вызвать замерщика</button>
+          </div>
+        </form>
+        <div class="tariff-form__hints">
+          <div class="tariff-form__hint">Замер <strong>бесплатный</strong></div>
+          <div class="tariff-form__hint">Образцы <strong>с собой</strong></div>
+          <div class="tariff-form__hint">Рассрочка <strong>0%</strong></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- 5. СЕКЦИЯ ДВЕРИ -->
+  <!-- ============================================ -->
+  <section class="product-section section--alt" id="section-dveri">
+    <div class="container">
+      <div class="section-label" style="text-align:center;">Двери</div>
+      <h2 class="section-title">Двери ПВХ BrusBox</h2>
+      <p class="section-desc">Входные и балконные двери из профиля BrusBox. Тёплые, надёжные, красивые.</p>
+
+      <!-- Преимущества дверей -->
+      <div class="product-features">
+        <div class="product-feature">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          <div><strong>Теплее металлических</strong><span>ПВХ не промерзает и не покрывается инеем</span></div>
+        </div>
+        <div class="product-feature">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+          <div><strong>Не ржавеет</strong><span>ПВХ не боится влаги, соли и перепадов температур</span></div>
+        </div>
+        <div class="product-feature">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <div><strong>Ламинация</strong><span>Дуб, махагон, антрацит — любой цвет под ваш фасад</span></div>
+        </div>
+        <div class="product-feature">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          <div><strong>Скидка с окнами</strong><span>Закажите окна + дверь — получите скидку 15%</span></div>
+        </div>
+      </div>
+
+      <!-- Тарифы дверей -->
+      <div class="tariffs__grid tariffs__grid--2col">
+        <!-- Балконная дверь -->
+        <div class="tariff-card">
+          <div class="tariff-card__tag tariff-card__tag--eco">Балконная</div>
+          <h3 class="tariff-card__name">Дверь балконная</h3>
+          <p class="tariff-card__desc">Стандартная балконная дверь с однокамерным стеклопакетом.</p>
+          <div class="tariff-card__features">
+            <div class="tariff-card__feature">Профиль BrusBox AERO 60 мм</div>
+            <div class="tariff-card__feature">Однокамерный стеклопакет</div>
+            <div class="tariff-card__feature">Фурнитура Roto (Германия)</div>
+            <div class="tariff-card__feature">Поворотно-откидной механизм</div>
+            <div class="tariff-card__feature">Москитная сетка</div>
+            <div class="tariff-card__feature">Монтаж + демонтаж</div>
+          </div>
+          <div class="tariff-card__pricing">
+            <div class="tariff-card__old-price">от 620 BYN</div>
+            <div class="tariff-card__price">от 490 BYN</div>
+            <div class="tariff-card__installment">или <strong>41 BYN/мес</strong> в рассрочку</div>
+          </div>
+          <div class="tariff-card__cta"><a href="#form-dveri" class="btn btn--outline btn--full">Выбрать</a></div>
+          <p class="tariff-card__note">Бесплатный замер. Гарантия 60 лет.</p>
+        </div>
+
+        <!-- Входная ПВХ -->
+        <div class="tariff-card tariff-card--popular">
+          <div class="tariff-card__tag tariff-card__tag--std">Входная</div>
+          <h3 class="tariff-card__name">Дверь входная ПВХ</h3>
+          <p class="tariff-card__desc">Тёплая входная дверь для частного дома или коттеджа.</p>
+          <div class="tariff-card__features">
+            <div class="tariff-card__feature">Профиль BrusBox 70 мм, 6 камер</div>
+            <div class="tariff-card__feature">Двухкамерный стеклопакет или сэндвич</div>
+            <div class="tariff-card__feature">Многоточечный замок</div>
+            <div class="tariff-card__feature">Ламинация в цвет фасада</div>
+            <div class="tariff-card__feature">Доводчик + порог с терморазрывом</div>
+            <div class="tariff-card__feature">Монтаж + откосы</div>
+          </div>
+          <div class="tariff-card__pricing">
+            <div class="tariff-card__old-price">от 980 BYN</div>
+            <div class="tariff-card__price">от 750 BYN</div>
+            <div class="tariff-card__installment">или <strong>63 BYN/мес</strong> в рассрочку</div>
+          </div>
+          <div class="tariff-card__cta"><a href="#form-dveri" class="btn btn--primary btn--full">Выбрать</a></div>
+          <p class="tariff-card__note">Бесплатный замер. Гарантия 60 лет.</p>
+        </div>
+      </div>
+
+      <!-- Форма двери -->
+      <div class="tariff-form" id="form-dveri">
+        <h3 class="tariff-form__title">Рассчитать стоимость двери</h3>
+        <p class="tariff-form__desc">Замерщик привезёт образцы ламинации и рассчитает точную стоимость.</p>
+        <form data-form="dveri">
+          <div class="tariff-form__row">
+            <input type="text" name="name" class="tariff-form__input" placeholder="Ваше имя" required>
+            <input type="tel" name="phone" class="tariff-form__input" placeholder="+375 (__) ___-__-__" required>
+            <button type="submit" class="btn btn--primary btn--lg">Вызвать замерщика</button>
+          </div>
+        </form>
+        <div class="tariff-form__hints">
+          <div class="tariff-form__hint">Замер <strong>бесплатный</strong></div>
+          <div class="tariff-form__hint">Образцы ламинации <strong>с собой</strong></div>
+          <div class="tariff-form__hint">Скидка <strong>15% с окнами</strong></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. КВИЗ -->
+  <section class="section" id="quiz">
+    <div class="container">
+      <div class="section-label" style="text-align:center;">Калькулятор</div>
+      <h2 class="section-title">Рассчитайте стоимость за 30 секунд</h2>
+      <p class="section-desc">5 вопросов — точный расчёт со скидкой 10%</p>
+      <div class="quiz__wrapper">
+        <div class="quiz__progress"><div class="quiz__progress-bar" style="width:20%"></div></div>
         <div class="quiz__step active">
           <div class="quiz__step-number">Шаг 1 из 5</div>
           <h3 class="quiz__question">Что вас интересует?</h3>
           <div class="quiz__options">
-            <div class="quiz__option" data-value="okna">
-              <div class="quiz__option-icon">&#9634;</div>
-              Пластиковые окна
-            </div>
-            <div class="quiz__option" data-value="dveri">
-              <div class="quiz__option-icon">&#128682;</div>
-              Двери
-            </div>
-            <div class="quiz__option" data-value="balkon">
-              <div class="quiz__option-icon">&#127969;</div>
-              Остекление балкона
-            </div>
-            <div class="quiz__option" data-value="all">
-              <div class="quiz__option-icon">&#128736;</div>
-              Комплексный заказ
-            </div>
+            <div class="quiz__option" data-value="okna"><div class="quiz__option-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M12 3v18M3 12h18"/></svg></div>Пластиковые окна</div>
+            <div class="quiz__option" data-value="balkon"><div class="quiz__option-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="1"/><path d="M2 10h20M7 10v10M12 10v10M17 10v10"/></svg></div>Остекление балкона</div>
+            <div class="quiz__option" data-value="dveri"><div class="quiz__option-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="2" width="16" height="20" rx="1"/><circle cx="15" cy="12" r="1" fill="currentColor"/></svg></div>Двери ПВХ</div>
+            <div class="quiz__option" data-value="all"><div class="quiz__option-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>Комплексный заказ</div>
           </div>
-          <div class="quiz__nav">
-            <div></div>
-            <button class="btn btn--primary" onclick="quizNext()">Далее &rarr;</button>
-          </div>
+          <div class="quiz__nav"><div></div><button class="btn btn--primary" onclick="quizNext()">Далее</button></div>
         </div>
-
-        <!-- Step 2 -->
         <div class="quiz__step">
           <div class="quiz__step-number">Шаг 2 из 5</div>
           <h3 class="quiz__question">Куда планируете установку?</h3>
           <div class="quiz__options">
-            <div class="quiz__option" data-value="kvartira">
-              <div class="quiz__option-icon">&#127970;</div>
-              Квартира
-            </div>
-            <div class="quiz__option" data-value="dom">
-              <div class="quiz__option-icon">&#127968;</div>
-              Частный дом
-            </div>
-            <div class="quiz__option" data-value="dacha">
-              <div class="quiz__option-icon">&#127795;</div>
-              Дача
-            </div>
-            <div class="quiz__option" data-value="office">
-              <div class="quiz__option-icon">&#127963;</div>
-              Офис / другое
-            </div>
+            <div class="quiz__option" data-value="kvartira"><div class="quiz__option-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="18" rx="1"/><path d="M9 22V12h6v10M8 8h2M14 8h2M8 14h2"/></svg></div>Квартира</div>
+            <div class="quiz__option" data-value="dom"><div class="quiz__option-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0h4"/></svg></div>Частный дом</div>
+            <div class="quiz__option" data-value="dacha"><div class="quiz__option-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3L3 9v12h18V9l-9-6z"/><path d="M9 22V15h6v7"/></svg></div>Дача</div>
+            <div class="quiz__option" data-value="other"><div class="quiz__option-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>Другое</div>
           </div>
-          <div class="quiz__nav">
-            <button class="btn btn--outline btn--sm" onclick="quizPrev()">&larr; Назад</button>
-            <button class="btn btn--primary" onclick="quizNext()">Далее &rarr;</button>
-          </div>
+          <div class="quiz__nav"><button class="btn btn--ghost btn--sm" onclick="quizPrev()">Назад</button><button class="btn btn--primary" onclick="quizNext()">Далее</button></div>
         </div>
-
-        <!-- Step 3 -->
         <div class="quiz__step">
           <div class="quiz__step-number">Шаг 3 из 5</div>
-          <h3 class="quiz__question">Сколько окон планируете?</h3>
+          <h3 class="quiz__question">Сколько позиций?</h3>
           <div class="quiz__options">
-            <div class="quiz__option" data-value="1-2">
-              <div class="quiz__option-icon">1-2</div>
-              окна
-            </div>
-            <div class="quiz__option" data-value="3-5">
-              <div class="quiz__option-icon">3-5</div>
-              окон
-            </div>
-            <div class="quiz__option" data-value="6-10">
-              <div class="quiz__option-icon">6-10</div>
-              окон
-            </div>
-            <div class="quiz__option" data-value="10+">
-              <div class="quiz__option-icon">10+</div>
-              окон
-            </div>
+            <div class="quiz__option" data-value="1-2"><div class="quiz__option-icon">1-2</div></div>
+            <div class="quiz__option" data-value="3-5"><div class="quiz__option-icon">3-5</div></div>
+            <div class="quiz__option" data-value="6-10"><div class="quiz__option-icon">6-10</div></div>
+            <div class="quiz__option" data-value="10+"><div class="quiz__option-icon">10+</div></div>
           </div>
-          <div class="quiz__nav">
-            <button class="btn btn--outline btn--sm" onclick="quizPrev()">&larr; Назад</button>
-            <button class="btn btn--primary" onclick="quizNext()">Далее &rarr;</button>
-          </div>
+          <div class="quiz__nav"><button class="btn btn--ghost btn--sm" onclick="quizPrev()">Назад</button><button class="btn btn--primary" onclick="quizNext()">Далее</button></div>
         </div>
-
-        <!-- Step 4 -->
         <div class="quiz__step">
           <div class="quiz__step-number">Шаг 4 из 5</div>
           <h3 class="quiz__question">Когда планируете установку?</h3>
           <div class="quiz__options">
-            <div class="quiz__option" data-value="asap">
-              <div class="quiz__option-icon">&#9889;</div>
-              Как можно скорее
-            </div>
-            <div class="quiz__option" data-value="month">
-              <div class="quiz__option-icon">&#128197;</div>
-              В течение месяца
-            </div>
-            <div class="quiz__option" data-value="quarter">
-              <div class="quiz__option-icon">&#128198;</div>
-              В течение 3 месяцев
-            </div>
-            <div class="quiz__option" data-value="later">
-              <div class="quiz__option-icon">&#128172;</div>
-              Пока просто узнаю цены
-            </div>
+            <div class="quiz__option" data-value="asap"><div class="quiz__option-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>Скорее</div>
+            <div class="quiz__option" data-value="month"><div class="quiz__option-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>В течение месяца</div>
+            <div class="quiz__option" data-value="quarter"><div class="quiz__option-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>В течение 3 месяцев</div>
+            <div class="quiz__option" data-value="later"><div class="quiz__option-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>Узнаю цены</div>
           </div>
-          <div class="quiz__nav">
-            <button class="btn btn--outline btn--sm" onclick="quizPrev()">&larr; Назад</button>
-            <button class="btn btn--primary" onclick="quizNext()">Далее &rarr;</button>
-          </div>
+          <div class="quiz__nav"><button class="btn btn--ghost btn--sm" onclick="quizPrev()">Назад</button><button class="btn btn--primary" onclick="quizNext()">Далее</button></div>
         </div>
-
-        <!-- Step 5 - Form -->
         <div class="quiz__step">
           <div class="quiz__step-number">Шаг 5 из 5</div>
-          <div class="quiz__form">
-            <h3 class="quiz__form-title">Ваш расчёт почти готов!</h3>
-            <p class="quiz__form-text">Оставьте контакты и получите точную стоимость со скидкой 10%. Доступна рассрочка 0%.</p>
+          <div>
+            <h3 class="quiz__form-title">Расчёт почти готов</h3>
+            <p class="quiz__form-text">Оставьте контакты — получите точную стоимость со скидкой 10%</p>
             <form class="quiz__final-form">
               <div class="quiz__inputs">
                 <input type="text" name="name" class="quiz__input" placeholder="Ваше имя" required>
@@ -529,307 +546,153 @@
               <p class="quiz__privacy">Нажимая кнопку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a></p>
             </form>
           </div>
-          <div class="quiz__nav" style="margin-top:16px">
-            <button class="btn btn--outline btn--sm" onclick="quizPrev()">&larr; Назад</button>
-            <div></div>
-          </div>
+          <div class="quiz__nav" style="margin-top:16px"><button class="btn btn--ghost btn--sm" onclick="quizPrev()">Назад</button><div></div></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============================== -->
-  <!-- БЛОК 5: ЭТАПЫ РАБОТЫ           -->
-  <!-- ============================== -->
-  <section class="section">
+  <!-- 7. ЭТАПЫ -->
+  <section class="section section--alt">
     <div class="container">
+      <div class="section-label" style="text-align:center;">Процесс</div>
       <h2 class="section-title">Как мы работаем</h2>
-      <p class="section-subtitle">От заявки до тёплых окон &mdash; 5 простых шагов</p>
+      <p class="section-desc">От заявки до установки — 5 простых шагов</p>
       <div class="steps-grid">
-        <div class="step-card">
-          <div class="step-card__number">1</div>
-          <h3 class="step-card__title">Заявка</h3>
-          <p class="step-card__text">Оставьте заявку на сайте или позвоните. Ответим за 5 минут.</p>
-        </div>
-        <div class="step-card">
-          <div class="step-card__number">2</div>
-          <h3 class="step-card__title">Бесплатный замер</h3>
-          <p class="step-card__text">Замерщик приедет в удобное время, рассчитает точную стоимость.</p>
-        </div>
-        <div class="step-card">
-          <div class="step-card__number">3</div>
-          <h3 class="step-card__title">Договор</h3>
-          <p class="step-card__text">Заключаем договор. Доступна рассрочка 0% до 12 месяцев.</p>
-        </div>
-        <div class="step-card">
-          <div class="step-card__number">4</div>
-          <h3 class="step-card__title">Производство</h3>
-          <p class="step-card__text">Изготовление 3-5 рабочих дней на немецком оборудовании.</p>
-        </div>
-        <div class="step-card">
-          <div class="step-card__number">5</div>
-          <h3 class="step-card__title">Монтаж</h3>
-          <p class="step-card__text">Установка за 1 день. Гарантия 5 лет на монтаж. Уборка за нами.</p>
-        </div>
-      </div>
-      <div style="text-align:center; margin-top:40px;">
-        <a href="#" class="btn btn--primary btn--lg" onclick="openModal('modal-zamer'); return false;">Оставить заявку</a>
+        <div class="step-card"><div class="step-card__number">1</div><h3 class="step-card__title">Заявка</h3><p class="step-card__text">Оставьте заявку на сайте или позвоните</p></div>
+        <div class="step-card"><div class="step-card__number">2</div><h3 class="step-card__title">Замер</h3><p class="step-card__text">Замерщик приедет бесплатно в удобное время</p></div>
+        <div class="step-card"><div class="step-card__number">3</div><h3 class="step-card__title">Договор</h3><p class="step-card__text">Фиксируем цену. Рассрочка 0% до 12 мес.</p></div>
+        <div class="step-card"><div class="step-card__number">4</div><h3 class="step-card__title">Производство</h3><p class="step-card__text">Изготовление за 3-5 рабочих дней</p></div>
+        <div class="step-card"><div class="step-card__number">5</div><h3 class="step-card__title">Монтаж</h3><p class="step-card__text">Установка за 1 день. Гарантия на работы.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- ============================== -->
-  <!-- БЛОК 6: АКЦИЯ + ТАЙМЕР         -->
-  <!-- ============================== -->
+  <!-- 8. АКЦИЯ -->
   <section class="promo">
     <div class="container">
       <div class="promo__content">
-        <h2 class="promo__title">Весенняя акция: скидка до 25%</h2>
-        <p class="promo__text">На все окна BrusBox до конца акции! Экономия до 140 BYN на каждом окне.</p>
+        <h2 class="promo__title">Скидка до 25% на окна, балконы и двери</h2>
+        <p class="promo__text">Экономия до 140 BYN на каждом окне. Действует на все продукты.</p>
         <div class="promo__features">
-          <div class="promo__feature">&#10004; Москитная сетка в подарок</div>
-          <div class="promo__feature">&#10004; Бесплатная доставка</div>
-          <div class="promo__feature">&#10004; Демонтаж старых окон бесплатно</div>
-          <div class="promo__feature">&#10004; Рассрочка 0% на весь заказ</div>
+          <div class="promo__feature">+ Москитная сетка в подарок</div>
+          <div class="promo__feature">+ Бесплатная доставка</div>
+          <div class="promo__feature">+ Демонтаж бесплатно</div>
+          <div class="promo__feature">+ Рассрочка 0%</div>
         </div>
-        <div style="margin-top:24px;">
-          <a href="#" class="btn btn--white btn--lg" onclick="openModal('modal-akciya'); return false;">Забронировать скидку</a>
-        </div>
+        <a href="#" class="btn btn--white" onclick="openModal('modal-akciya'); return false;">Забронировать скидку</a>
       </div>
       <div class="promo__timer">
-        <div class="timer-block">
-          <div class="timer-block__value" data-days>14</div>
-          <div class="timer-block__label">дней</div>
-        </div>
-        <div class="timer-block">
-          <div class="timer-block__value" data-hours>00</div>
-          <div class="timer-block__label">часов</div>
-        </div>
-        <div class="timer-block">
-          <div class="timer-block__value" data-minutes>00</div>
-          <div class="timer-block__label">минут</div>
-        </div>
-        <div class="timer-block">
-          <div class="timer-block__value" data-seconds>00</div>
-          <div class="timer-block__label">секунд</div>
-        </div>
+        <div class="timer-block"><div class="timer-block__value" data-days>14</div><div class="timer-block__label">дней</div></div>
+        <div class="timer-block"><div class="timer-block__value" data-hours>00</div><div class="timer-block__label">часов</div></div>
+        <div class="timer-block"><div class="timer-block__value" data-minutes>00</div><div class="timer-block__label">минут</div></div>
+        <div class="timer-block"><div class="timer-block__value" data-seconds>00</div><div class="timer-block__label">секунд</div></div>
       </div>
     </div>
   </section>
 
-  <!-- ============================== -->
-  <!-- БЛОК 7: ПОРТФОЛИО              -->
-  <!-- ============================== -->
+  <!-- 9. ПОРТФОЛИО -->
   <section class="section">
     <div class="container">
+      <div class="section-label" style="text-align:center;">Портфолио</div>
       <h2 class="section-title">Наши работы</h2>
-      <p class="section-subtitle">Более 5 000 установленных окон по всей Беларуси</p>
+      <p class="section-desc">Более 5 000 выполненных заказов по всей Беларуси</p>
       <div class="portfolio-grid">
-        <div class="portfolio-card">
-          <div class="portfolio-card__placeholder">&#9634;</div>
-          <div class="portfolio-card__overlay">
-            <div class="portfolio-card__title">Квартира, 5 окон</div>
-            <div class="portfolio-card__location">Минск, Фрунзенский р-н</div>
-          </div>
-        </div>
-        <div class="portfolio-card">
-          <div class="portfolio-card__placeholder">&#127968;</div>
-          <div class="portfolio-card__overlay">
-            <div class="portfolio-card__title">Коттедж, 14 окон</div>
-            <div class="portfolio-card__location">Минский р-н</div>
-          </div>
-        </div>
-        <div class="portfolio-card">
-          <div class="portfolio-card__placeholder">&#9634;</div>
-          <div class="portfolio-card__overlay">
-            <div class="portfolio-card__title">Остекление балкона</div>
-            <div class="portfolio-card__location">Брест</div>
-          </div>
-        </div>
-        <div class="portfolio-card">
-          <div class="portfolio-card__placeholder">&#127970;</div>
-          <div class="portfolio-card__overlay">
-            <div class="portfolio-card__title">Квартира, 3 окна</div>
-            <div class="portfolio-card__location">Гомель</div>
-          </div>
-        </div>
-        <div class="portfolio-card">
-          <div class="portfolio-card__placeholder">&#127968;</div>
-          <div class="portfolio-card__overlay">
-            <div class="portfolio-card__title">Частный дом, 8 окон</div>
-            <div class="portfolio-card__location">Гродно</div>
-          </div>
-        </div>
-        <div class="portfolio-card">
-          <div class="portfolio-card__placeholder">&#9634;</div>
-          <div class="portfolio-card__overlay">
-            <div class="portfolio-card__title">Лоджия + 2 окна</div>
-            <div class="portfolio-card__location">Витебск</div>
-          </div>
-        </div>
-      </div>
-      <div style="text-align:center; margin-top:32px;">
-        <a href="pages/portfolio.html" class="btn btn--outline">Смотреть все работы &rarr;</a>
+        <div class="portfolio-card"><div class="portfolio-card__placeholder">&#9634;</div><div class="portfolio-card__overlay"><div class="portfolio-card__title">Квартира, 5 окон</div><div class="portfolio-card__location">Минск</div></div></div>
+        <div class="portfolio-card"><div class="portfolio-card__placeholder">&#9650;</div><div class="portfolio-card__overlay"><div class="portfolio-card__title">Коттедж, 14 окон + дверь</div><div class="portfolio-card__location">Минский р-н</div></div></div>
+        <div class="portfolio-card"><div class="portfolio-card__placeholder">&#9634;</div><div class="portfolio-card__overlay"><div class="portfolio-card__title">Балкон тёплый под ключ</div><div class="portfolio-card__location">Брест</div></div></div>
+        <div class="portfolio-card"><div class="portfolio-card__placeholder">&#9632;</div><div class="portfolio-card__overlay"><div class="portfolio-card__title">Квартира, 3 окна + балкон</div><div class="portfolio-card__location">Гомель</div></div></div>
+        <div class="portfolio-card"><div class="portfolio-card__placeholder">&#9650;</div><div class="portfolio-card__overlay"><div class="portfolio-card__title">Дом, 8 окон + входная дверь</div><div class="portfolio-card__location">Гродно</div></div></div>
+        <div class="portfolio-card"><div class="portfolio-card__placeholder">&#9634;</div><div class="portfolio-card__overlay"><div class="portfolio-card__title">Лоджия раздвижная</div><div class="portfolio-card__location">Витебск</div></div></div>
       </div>
     </div>
   </section>
 
-  <!-- ============================== -->
-  <!-- БЛОК 8: ОТЗЫВЫ + РЕЙТИНГИ      -->
-  <!-- ============================== -->
-  <section class="section section--gray">
+  <!-- 10. ОТЗЫВЫ -->
+  <section class="section section--alt">
     <div class="container">
-      <h2 class="section-title">Отзывы наших клиентов</h2>
-      <p class="section-subtitle">Более 1 500 довольных семей по всей Беларуси</p>
-      <div class="reviews-platforms" style="display:flex;justify-content:center;gap:32px;margin-bottom:40px;">
-        <div style="text-align:center;">
-          <div style="font-size:1.5rem;font-weight:800;color:var(--dark);">4.9</div>
-          <div style="color:var(--accent);font-size:0.85rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <div style="font-size:0.75rem;color:var(--text-muted);">Google (87 отзывов)</div>
-        </div>
-        <div style="text-align:center;">
-          <div style="font-size:1.5rem;font-weight:800;color:var(--dark);">4.8</div>
-          <div style="color:var(--accent);font-size:0.85rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <div style="font-size:0.75rem;color:var(--text-muted);">Яндекс (53 отзыва)</div>
-        </div>
-        <div style="text-align:center;">
-          <div style="font-size:1.5rem;font-weight:800;color:var(--dark);">5.0</div>
-          <div style="color:var(--accent);font-size:0.85rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <div style="font-size:0.75rem;color:var(--text-muted);">Отзовик (34 отзыва)</div>
-        </div>
+      <div class="section-label" style="text-align:center;">Отзывы</div>
+      <h2 class="section-title">Что говорят клиенты</h2>
+      <p class="section-desc">Реальные отзывы от клиентов BrusBox</p>
+      <div class="ratings">
+        <div class="rating-item"><div class="rating-item__score">4.9</div><div class="rating-item__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="rating-item__source">Google (87)</div></div>
+        <div class="rating-item"><div class="rating-item__score">4.8</div><div class="rating-item__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="rating-item__source">Яндекс (53)</div></div>
+        <div class="rating-item"><div class="rating-item__score">5.0</div><div class="rating-item__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="rating-item__source">Отзовик (34)</div></div>
       </div>
       <div class="reviews-grid">
         <div class="review-card">
           <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="review-card__text">&laquo;Заменили все 5 окон в квартире на BrusBox 70-6. Разница колоссальная &mdash; стало тепло и тихо! Замерщик приехал в тот же день, установили за полдня. Рассрочку оформили без проблем.&raquo;</p>
-          <div class="review-card__author">
-            <div class="review-card__avatar">ИП</div>
-            <div>
-              <div class="review-card__name">Иван Петрович</div>
-              <div class="review-card__meta">Минск &middot; Профиль 70-6</div>
-            </div>
-          </div>
+          <p class="review-card__text">Заменили все 5 окон на BrusBox 70-6. Разница колоссальная — стало тепло и тихо. Рассрочку оформили прямо на дому.</p>
+          <div class="review-card__author"><div class="review-card__avatar">ИП</div><div><div class="review-card__name">Иван Петрович</div><div class="review-card__meta">Минск &middot; Окна 70-6</div></div></div>
         </div>
         <div class="review-card">
           <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="review-card__text">&laquo;Остеклили балкон раздвижной системой GLIDE &mdash; теперь это полноценная комната! Рассрочку оформили без проблем. Рекомендую всем знакомым.&raquo;</p>
-          <div class="review-card__author">
-            <div class="review-card__avatar">АС</div>
-            <div>
-              <div class="review-card__name">Анна Сидорова</div>
-              <div class="review-card__meta">Брест &middot; Система GLIDE</div>
-            </div>
-          </div>
+          <p class="review-card__text">Остеклили балкон тёплым профилем — теперь полноценная комната. Зимой тепло, летом тихо. Рекомендую!</p>
+          <div class="review-card__author"><div class="review-card__avatar">АС</div><div><div class="review-card__name">Анна Сидорова</div><div class="review-card__meta">Брест &middot; Балкон тёплый</div></div></div>
         </div>
         <div class="review-card">
           <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="review-card__text">&laquo;Строили дом и заказали 12 окон BrusBox AERO. Отличное соотношение цены и качества. Бригада работала аккуратно, убрали за собой весь мусор. Взяли в рассрочку &mdash; очень удобно.&raquo;</p>
-          <div class="review-card__author">
-            <div class="review-card__avatar">ДК</div>
-            <div>
-              <div class="review-card__name">Дмитрий Козлов</div>
-              <div class="review-card__meta">Гродно &middot; Профиль AERO</div>
-            </div>
-          </div>
+          <p class="review-card__text">12 окон + входная дверь для дома. Всё в ламинации «золотой дуб». Выглядит шикарно, соседи завидуют.</p>
+          <div class="review-card__author"><div class="review-card__avatar">ДК</div><div><div class="review-card__name">Дмитрий Козлов</div><div class="review-card__meta">Гродно &middot; Окна + дверь</div></div></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============================== -->
-  <!-- БЛОК 9: FAQ                    -->
-  <!-- ============================== -->
+  <!-- 11. FAQ -->
   <section class="section">
     <div class="container">
+      <div class="section-label" style="text-align:center;">FAQ</div>
       <h2 class="section-title">Частые вопросы</h2>
-      <p class="section-subtitle">Ответы на популярные вопросы наших клиентов</p>
+      <p class="section-desc">Ответы на популярные вопросы по окнам, балконам и дверям</p>
       <div class="faq-list">
         <div class="faq-item">
-          <div class="faq-item__question">
-            <span>Сколько стоят окна BrusBox?</span>
-            <span class="faq-item__icon">+</span>
-          </div>
-          <div class="faq-item__answer">
-            <div class="faq-item__answer-inner">
-              Стоимость зависит от размера, профиля и комплектации. Тариф &laquo;Комфорт&raquo; (AERO) &mdash; от 240 BYN, &laquo;Оптимал&raquo; (70-6) &mdash; от 340 BYN, &laquo;Премиум&raquo; (SUPER AERO) &mdash; от 420 BYN за окно. Замер бесплатный &mdash; приедем и рассчитаем точно.
-            </div>
-          </div>
+          <div class="faq-item__question"><span>Сколько стоят окна BrusBox?</span><span class="faq-item__icon">+</span></div>
+          <div class="faq-item__answer"><div class="faq-item__answer-inner">Комфорт (AERO) — от 240 BYN, Оптимал (70-6) — от 340 BYN, Премиум (SUPER AERO) — от 420 BYN за окно. Точную стоимость рассчитает замерщик бесплатно.</div></div>
         </div>
         <div class="faq-item">
-          <div class="faq-item__question">
-            <span>Какой профиль лучше выбрать?</span>
-            <span class="faq-item__icon">+</span>
-          </div>
-          <div class="faq-item__answer">
-            <div class="faq-item__answer-inner">
-              Для типовой квартиры &mdash; AERO или 60-4. Для квартиры на шумной улице или частного дома &mdash; 70-6 (6 камер, лучшая тепло- и шумоизоляция). Для коттеджа с максимальной энергоэффективностью &mdash; SUPER AERO. Наш специалист поможет выбрать при замере.
-            </div>
-          </div>
+          <div class="faq-item__question"><span>Сколько стоит остекление балкона?</span><span class="faq-item__icon">+</span></div>
+          <div class="faq-item__answer"><div class="faq-item__answer-inner">Раздвижное (холодное) — от 180 BYN/м². Тёплое — от 320 BYN/м². Под ключ (остекление + утепление + отделка) — от 490 BYN/м². Точная цена зависит от размеров — замер бесплатный.</div></div>
         </div>
         <div class="faq-item">
-          <div class="faq-item__question">
-            <span>Работаете ли вы в рассрочку?</span>
-            <span class="faq-item__icon">+</span>
-          </div>
-          <div class="faq-item__answer">
-            <div class="faq-item__answer-inner">
-              Да! Рассрочка 0% на срок до 12 месяцев без переплат и скрытых комиссий. Оформляется при заключении договора. Также принимаем оплату через ЕРИП, картой, наличными или в кредит.
-            </div>
-          </div>
+          <div class="faq-item__question"><span>Чем тёплое остекление отличается от раздвижного?</span><span class="faq-item__icon">+</span></div>
+          <div class="faq-item__answer"><div class="faq-item__answer-inner">Тёплое — это полноценный ПВХ профиль со стеклопакетом. Балкон становится жилой комнатой. Раздвижное — алюминиевый профиль с одинарным стеклом. Защищает от дождя и пыли, но не утепляет. Раздвижное в 2 раза дешевле.</div></div>
         </div>
         <div class="faq-item">
-          <div class="faq-item__question">
-            <span>Сколько времени занимает изготовление и установка?</span>
-            <span class="faq-item__icon">+</span>
-          </div>
-          <div class="faq-item__answer">
-            <div class="faq-item__answer-inner">
-              Изготовление &mdash; 3-5 рабочих дней. Установка одного окна &mdash; 2-3 часа. Полный комплект для квартиры ставим за 1 день. Демонтаж старых окон и уборка включены в стоимость.
-            </div>
-          </div>
+          <div class="faq-item__question"><span>Какой профиль лучше выбрать?</span><span class="faq-item__icon">+</span></div>
+          <div class="faq-item__answer"><div class="faq-item__answer-inner">Для тихого двора — AERO (3 камеры, бюджет). Для шумной улицы или частного дома — 70-6 (6 камер, тепло и тихо). Для максимальной экономии на отоплении — SUPER AERO. Поможем выбрать при замере.</div></div>
         </div>
         <div class="faq-item">
-          <div class="faq-item__question">
-            <span>Какую гарантию вы даёте?</span>
-            <span class="faq-item__icon">+</span>
-          </div>
-          <div class="faq-item__answer">
-            <div class="faq-item__answer-inner">
-              60 лет на профиль BrusBox (от производителя), 10 лет на фурнитуру, 5 лет на монтажные работы. Плюс бесплатное постгарантийное обслуживание.
-            </div>
-          </div>
+          <div class="faq-item__question"><span>Есть ли рассрочка?</span><span class="faq-item__icon">+</span></div>
+          <div class="faq-item__answer"><div class="faq-item__answer-inner">Да, рассрочка 0% до 12 месяцев без переплат на все продукты — окна, балконы, двери. Оформляется при заключении договора. Никаких скрытых комиссий.</div></div>
         </div>
         <div class="faq-item">
-          <div class="faq-item__question">
-            <span>Работаете ли вы за пределами Минска?</span>
-            <span class="faq-item__icon">+</span>
-          </div>
-          <div class="faq-item__answer">
-            <div class="faq-item__answer-inner">
-              Да, мы работаем по всей Беларуси: Минск, Брест, Гомель, Гродно, Витебск, Могилёв и все районные центры. Доставка по Минску &mdash; бесплатно, в регионы &mdash; по тарифу. Замер бесплатный в любом городе.
-            </div>
-          </div>
+          <div class="faq-item__question"><span>Чем ПВХ дверь лучше металлической?</span><span class="faq-item__icon">+</span></div>
+          <div class="faq-item__answer"><div class="faq-item__answer-inner">ПВХ дверь не промерзает, не покрывается инеем, не ржавеет. Теплоизоляция в 3 раза выше чем у металла. Не нужно утеплять. Может быть ламинирована под дерево — выглядит дороже при меньшей цене.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-item__question"><span>Сколько времени занимает установка?</span><span class="faq-item__icon">+</span></div>
+          <div class="faq-item__answer"><div class="faq-item__answer-inner">Изготовление 3-5 дней. Установка окна — 2-3 часа, все окна в квартире — за 1 день. Остекление балкона — 1 день. Дверь — 2-4 часа. Демонтаж и уборка включены.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-item__question"><span>Работаете за пределами Минска?</span><span class="faq-item__icon">+</span></div>
+          <div class="faq-item__answer"><div class="faq-item__answer-inner">Да, по всей Беларуси. Доставка по Минску бесплатно. Замер бесплатный в любом городе.</div></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============================== -->
-  <!-- БЛОК 10: CTA                   -->
-  <!-- ============================== -->
+  <!-- 12. CTA -->
   <section class="cta-section">
     <div class="container">
-      <h2>Готовы к тёплым окнам?</h2>
-      <p>Оставьте заявку и получите бесплатный замер + расчёт стоимости. Рассрочка 0%.</p>
+      <h2>Готовы к обновлению?</h2>
+      <p>Бесплатный замер + расчёт стоимости на окна, балконы или двери. Рассрочка 0%.</p>
       <form class="cta-form" data-form="cta">
         <input type="text" name="name" placeholder="Ваше имя" required>
         <input type="tel" name="phone" placeholder="+375 (__) ___-__-__" required>
         <button type="submit" class="btn btn--primary btn--lg">Заказать замер</button>
       </form>
-      <div class="cta-contact">
-        Или позвоните: <a href="tel:+375291234567">+375 (29) 123-45-67</a> &middot;
-        <a href="#">Viber</a> &middot; <a href="#">Telegram</a> &mdash; ответим за 5 минут
-      </div>
+      <div class="cta-contact">Или позвоните: <a href="tel:+375291234567">+375 (29) 123-45-67</a></div>
     </div>
   </section>
 
@@ -839,55 +702,37 @@
       <div class="footer__grid">
         <div>
           <div class="footer__brand">BRUS<span>BOX</span></div>
-          <p class="footer__desc">Официальный дилер BrusBox в Беларуси. Пластиковые окна, двери и балконные системы с гарантией до 60 лет.</p>
-          <div class="footer__social">
-            <a href="#" title="Instagram">In</a>
-            <a href="#" title="VK">VK</a>
-            <a href="#" title="YouTube">YT</a>
-            <a href="#" title="Telegram">Tg</a>
-          </div>
+          <p class="footer__desc">Официальный дилер BrusBox в Беларуси. Окна, балконы и двери ПВХ с гарантией 60 лет.</p>
         </div>
         <div>
           <div class="footer__title">Продукция</div>
           <div class="footer__links">
-            <a href="pages/okna.html">Пластиковые окна</a>
-            <a href="pages/dveri.html">Двери ПВХ</a>
-            <a href="pages/balkony.html">Балконы и лоджии</a>
-            <a href="pages/profili.html">Профили BrusBox</a>
-            <a href="pages/ceny.html">Цены</a>
+            <a href="#section-okna">Окна</a>
+            <a href="#section-balkony">Балконы</a>
+            <a href="#section-dveri">Двери</a>
+            <a href="pages/profili.html">Профили</a>
           </div>
         </div>
         <div>
-          <div class="footer__title">Информация</div>
+          <div class="footer__title">Компания</div>
           <div class="footer__links">
-            <a href="pages/about.html">О компании</a>
-            <a href="pages/portfolio.html">Наши работы</a>
+            <a href="pages/about.html">О нас</a>
+            <a href="pages/portfolio.html">Работы</a>
             <a href="pages/akcii.html">Акции</a>
-            <a href="#">Сертификаты</a>
-            <a href="#">Гарантии</a>
-          </div>
-        </div>
-        <div>
-          <div class="footer__title">Полезное</div>
-          <div class="footer__links">
-            <a href="#">Как выбрать окна</a>
-            <a href="#">Уход за окнами</a>
-            <a href="#">Энергосбережение</a>
-            <a href="#">FAQ</a>
+            <a href="pages/ceny.html">Цены</a>
           </div>
         </div>
         <div>
           <div class="footer__title">Контакты</div>
           <div class="footer__links">
             <a href="tel:+375291234567">+375 (29) 123-45-67</a>
-            <a href="tel:+375331234567">+375 (33) 123-45-67</a>
             <a href="mailto:info@brusbox.by">info@brusbox.by</a>
-            <a href="pages/kontakty.html">г. Минск, ул. Примерная, 1</a>
+            <a href="pages/kontakty.html">г. Минск</a>
           </div>
         </div>
       </div>
       <div class="footer__bottom">
-        <span>&copy; 2026 BrusBox Беларусь. Все права защищены.</span>
+        <span>&copy; 2026 BrusBox Беларусь</span>
         <a href="#">Политика конфиденциальности</a>
       </div>
     </div>
@@ -896,71 +741,74 @@
   <!-- MOBILE BAR -->
   <div class="mobile-bar">
     <div class="container">
-      <a href="tel:+375291234567" class="mobile-bar__item">
-        <span class="mobile-bar__icon">&#128222;</span>
-        Позвонить
-      </a>
-      <a href="#" class="mobile-bar__item">
-        <span class="mobile-bar__icon">&#128172;</span>
-        Viber
-      </a>
-      <a href="#" class="mobile-bar__item">
-        <span class="mobile-bar__icon">&#9993;</span>
-        Telegram
-      </a>
-      <a href="#" class="mobile-bar__item" onclick="openModal('modal-zamer'); return false;">
-        <span class="mobile-bar__icon">&#128207;</span>
-        Замер
-      </a>
+      <a href="tel:+375291234567" class="mobile-bar__item"><span class="mobile-bar__icon">&#9742;</span>Позвонить</a>
+      <a href="#" class="mobile-bar__item"><span class="mobile-bar__icon">&#9993;</span>Написать</a>
+      <a href="#" class="mobile-bar__item" onclick="openModal('modal-zamer'); return false;"><span class="mobile-bar__icon">&#9998;</span>Замер</a>
     </div>
   </div>
 
-  <!-- MODAL: Замер -->
+  <!-- MODALS -->
   <div class="modal-overlay" id="modal-zamer">
     <div class="modal">
       <button class="modal__close" onclick="closeModal('modal-zamer')">&times;</button>
       <h3 class="modal__title">Бесплатный замер</h3>
-      <p class="modal__text">Оставьте контакты и наш замерщик приедет в удобное для вас время</p>
+      <p class="modal__text">Замерщик приедет в удобное время и рассчитает точную стоимость</p>
       <form class="modal__form" data-form="zamer">
         <input type="text" name="name" placeholder="Ваше имя" required>
         <input type="tel" name="phone" placeholder="+375 (__) ___-__-__" required>
-        <input type="text" name="address" placeholder="Адрес (город, улица)">
         <button type="submit" class="btn btn--primary" style="width:100%">Вызвать замерщика</button>
         <p class="modal__privacy">Нажимая кнопку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a></p>
       </form>
     </div>
   </div>
 
-  <!-- MODAL: Акция -->
   <div class="modal-overlay" id="modal-akciya">
     <div class="modal">
       <button class="modal__close" onclick="closeModal('modal-akciya')">&times;</button>
-      <h3 class="modal__title">Забронировать скидку до 25%</h3>
-      <p class="modal__text">Оставьте контакты и мы зафиксируем за вами скидку по акции. Доступна рассрочка 0%.</p>
+      <h3 class="modal__title">Забронировать скидку</h3>
+      <p class="modal__text">Зафиксируем за вами скидку до 25% на окна, балконы или двери</p>
       <form class="modal__form" data-form="akciya">
         <input type="text" name="name" placeholder="Ваше имя" required>
         <input type="tel" name="phone" placeholder="+375 (__) ___-__-__" required>
-        <button type="submit" class="btn btn--primary" style="width:100%">Забронировать скидку</button>
+        <button type="submit" class="btn btn--primary" style="width:100%">Забронировать</button>
         <p class="modal__privacy">Нажимая кнопку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a></p>
       </form>
     </div>
   </div>
 
-  <!-- MODAL: Exit Intent -->
   <div class="modal-overlay" id="exit-modal">
     <div class="modal">
       <button class="modal__close" onclick="closeModal('exit-modal')">&times;</button>
-      <h3 class="modal__title">Подождите! Не уходите без скидки</h3>
-      <p class="modal__text">Оставьте телефон и получите персональную скидку 10% на любой заказ. Рассрочка 0%.</p>
+      <h3 class="modal__title">Скидка 10% на любой заказ</h3>
+      <p class="modal__text">Оставьте телефон — получите персональную скидку на окна, балконы или двери</p>
       <form class="modal__form" data-form="exit">
         <input type="text" name="name" placeholder="Ваше имя" required>
         <input type="tel" name="phone" placeholder="+375 (__) ___-__-__" required>
-        <button type="submit" class="btn btn--primary" style="width:100%">Получить скидку 10%</button>
+        <button type="submit" class="btn btn--primary" style="width:100%">Получить скидку</button>
         <p class="modal__privacy">Нажимая кнопку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a></p>
       </form>
     </div>
   </div>
 
   <script src="js/main.js"></script>
+  <script>
+    // Theme Switcher
+    document.querySelectorAll('[data-set-theme]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const theme = btn.dataset.setTheme;
+        document.body.setAttribute('data-theme', theme);
+        document.querySelectorAll('.theme-switcher__btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        localStorage.setItem('brusbox-theme', theme);
+      });
+    });
+    const saved = localStorage.getItem('brusbox-theme');
+    if (saved) {
+      document.body.setAttribute('data-theme', saved);
+      document.querySelectorAll('.theme-switcher__btn').forEach(b => {
+        b.classList.toggle('active', b.dataset.setTheme === saved);
+      });
+    }
+  </script>
 </body>
 </html>
