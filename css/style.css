@@ -1834,5 +1834,113 @@ h1, h2, h3, h4, h5, h6 {
   .tariffs__grid--2col { grid-template-columns: 1fr; }
 }
 
+/* ===== PRODUCT SECTION CTA ===== */
+.product-section__cta {
+  text-align: center;
+  padding: 40px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+.product-section__cta p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+.product-section__cta-note {
+  display: block;
+  margin-top: 12px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* ===== QUIZ RESULT ===== */
+.quiz__result {
+  background: var(--accent-light);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+.quiz__result-price {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.quiz__result-note {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ===== GUARANTEES ===== */
+.guarantees {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 56px;
+}
+.guarantee-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.guarantee-item svg {
+  flex-shrink: 0;
+  color: var(--accent);
+}
+.guarantee-item strong {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 2px;
+}
+.guarantee-item div:last-child {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* ===== RATING LINK ===== */
+.rating-item--link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: all var(--transition);
+}
+.rating-item--link:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow);
+  color: inherit;
+}
+.rating-item__check {
+  font-size: 0.72rem;
+  color: var(--accent);
+  margin-top: 4px;
+  font-weight: 600;
+}
+
+/* ===== RESPONSIVE NEW ===== */
+@media (max-width: 768px) {
+  .guarantees { grid-template-columns: 1fr 1fr; }
+  .ratings { flex-wrap: wrap; }
+}
+@media (max-width: 480px) {
+  .guarantees { grid-template-columns: 1fr; }
+}
+
 /* ===== UTILITY ===== */
 .vis { opacity: 1 !important; transform: translateY(0) !important; }
